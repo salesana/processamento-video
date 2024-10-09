@@ -9,6 +9,43 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
+/* Specific style for Ana Paula Sales text */
+.w3-display-bottomleft h3 {
+    color: white;           /* Changes the text color to white */
+    font-weight: bold;      /* Makes the font bold */
+    font-size: 24px;        /* Adjusts the font size (change if needed) */
+    margin: 20;              /* Removes any extra margin around the text */
+}
+
+/* Main image that is always visible */
+.main-image {
+    display: block;
+    width: 100%;
+    transition: opacity 0.5s ease; /* Smooth transition */
+}
+
+/* Hover image (hidden by default) */
+.hover-image {
+    position: absolute; /* Ensure it's placed over the main image */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0; /* Hidden by default */
+    transition: opacity 0.5s ease; /* Smooth fade-in effect */
+}
+
+/* When hovering over the container, show the hover image */
+.w3-display-container:hover .hover-image {
+    opacity: 1; /* Show the hover image */
+}
+
+/* Optionally, fade out the main image when hovering */
+.w3-display-container:hover .main-image {
+    opacity: 0; /* Fade out the main image */
+}
+
+
 </style>
 </head>
 <body class="w3-light-grey">
@@ -16,6 +53,11 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
 <!-- Page Container -->
 <div class="w3-content w3-margin-top" style="max-width:1400px;">
 
+  <div class="image-container">
+    <div class="w3-display-container">
+      
+  </div>
+  
   <!-- The Grid -->
   <div class="w3-row-padding">
   
@@ -24,7 +66,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-white w3-text-grey w3-card-4">
         <div class="w3-display-container">
-          <img src="assets/Ana Paula.jpeg" style="width:100%" alt="Avatar">
+          <img src="images/ana_2024.jpeg" style="width:100%" alt="Avatar">
+          <img src="images/ana2.jpeg" class="hover-image" style="width:100%" alt="Other Image">
           <div class="w3-display-bottomleft w3-container w3-text-black">
             <h3>Ana Paula Sales</h3>
           </div>
@@ -43,8 +86,8 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
           </div>
           <p>Oracle Cloud</p>
           <div class="w3-light-grey w3-round-xlarge w3-small">
-            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:60%">
-              <div class="w3-center w3-text-white">60%</div>
+            <div class="w3-container w3-center w3-round-xlarge w3-teal" style="width:80%">
+              <div class="w3-center w3-text-white">80%</div>
             </div>
           </div>
           <p>SQL</p>
@@ -81,12 +124,12 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     
       <div class="w3-container w3-card w3-white w3-margin-bottom">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>Sobre mim</h2>
-          <p>Eu sou uma estudante de Engenharia de Informação, e tenho 23 anos de idade. Atualmente, estou empregada como Engenheira de Soluções MySQL na Oracle, onde desempenho um papel na otimização de bancos de dados e sistemas. Sou apaixonada por tecnologia desde jovem e estou constantemente em busca de aprimorar minhas habilidades. Além disso, tenho um forte interesse em aprender novos idiomas, acredito que isso me permite conectar com pessoas de diferentes culturas. Fora do trabalho, meu coração pertence à minha família e amigos, e eu valorizo cada momento que passo com eles. Também amo viajar, estou sempre ansiosa por novas aventuras e experiências que enriqueçam minha vida.</p>
+          <p>Eu sou uma estudante de Engenharia de Informação, e tenho 24 anos de idade. Atualmente, estou empregada como Engenheira de Soluções MySQL na Oracle, onde desempenho um papel na otimização de bancos de dados e sistemas. Sou apaixonada por tecnologia desde jovem e estou constantemente em busca de aprimorar minhas habilidades. Além disso, tenho um forte interesse em aprender novos idiomas, acredito que isso me permite conectar com pessoas de diferentes culturas. Fora do trabalho, meu coração pertence à minha família e amigos, e eu valorizo cada momento que passo com eles. Também amo viajar, estou sempre ansiosa por novas aventuras e experiências que enriqueçam minha vida.</p>
           <hr>
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>Meu trabalho</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Setembro 2023</h6>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Outubro 2024</h6>
           <iframe width="600" height="315" src="https://www.youtube.com/embed/bjTG3TMKOOM" frameborder="0" allowfullscreen></iframe>
 
 </iframe>
@@ -95,7 +138,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <div class="w3-container">  
           <h5 class="w3-opacity"><b>Breve Apresentação </b></h5>
           
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Setembro 2023</h6>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Outubro 2024</h6>
           <audio controls>
             <source src="https://od.lk/s/MzdfMjczMzQ5NDNf/audio.mp3" type="audio/mpeg">
           </audio>
@@ -104,7 +147,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         </div>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>PDF criado por mim</b></h5>
-          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Setembro 2023</h6>
+          <h6 class="w3-text-teal"><i class="fa fa-calendar fa-fw w3-margin-right"></i>Outubro 2024</h6>
           <p>PDF criado para uma apresentação no evento TDC, The Developers Conference, sobre o novo motor do MySQL conhecido como HeatWave.</p>
           <object data="images/ana.pdf" type="application/pdf"></object>
         </div>
