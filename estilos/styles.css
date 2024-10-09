@@ -11,13 +11,26 @@
     display: inline-block;
     margin-top: 2.5em;
     margin-left: 50%;
+    cursor: pointer; /* Add a pointer to indicate it's clickable */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
+
+/* Hover effect */
+.menu_hamburguer:hover {
+    transform: scale(1.1);  /* Slightly increase the size when hovering */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
+}
+
 
 .navegacao__lista {
     display: none;
     position: absolute;
     top: 100%;
     width: 60vw;
+}
+
+.navegacao__lista:hover {
+    box-shadow: 4px 4px 10px rgba(39, 188, 5, 0.3); /* Adds a shadow on hover */
 }
 
 .lista__botao {
@@ -211,6 +224,18 @@ background-color: white;
     padding-left: 0em;
 
 }
+
+.titulopagina {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: 1.5rem;        /* Keeps the font smaller */
+    text-align: center;       /* Centers the text horizontally */
+    margin: -20px auto 0 auto; /* Moves the text upwards (negative margin) */
+    width: 100%;              /* Ensures the element takes up the full width */
+    font-weight: bold;        /* Makes the text bold */
+}
+
+
 
 .imagem  {
     width: 100%;
