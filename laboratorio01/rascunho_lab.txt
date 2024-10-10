@@ -1,0 +1,28 @@
+Introdução
+Fundamentos Básicos
+Materias e Métodos
+	Ubuntu 22.04.5 LTS - 64bits
+	WebCam LifeCam VX800 - Microsoft
+	OpenCV
+	-prodedimentos experimentais:
+		Utilizando uma instância do Ubuntu versõa 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. Após isso, seguindo os tutoriais fornecidos via Moodle (linkar sites), foram criados diversos programas de visualização, captura e escrita de imagens e vídeos.
+		O processo de criação de um programa iniciava criando um arquivo CMakeLists em formato ".txt" (EXPLICAR COMO FUNCIONA/PARA QUE SERVE CMAKELIST) e um arquivo de programação em linguagem C++ responsável pelos passos executados pelo programa. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência, "make".
+		Tais comandos realizavam a criação do programa, em formato de arquivo executável.
+Resultados e Análises
+	A) Leitura de imagem em arquivo e exibir na tela:
+		Programa_LerImagem
+		EXPLICAR
+	B) Leitura e gravação de vídeo:
+		TABELA - 5 códigos - o que fazem
+		Programa_LerVideos
+		Explicar
+	C) Obtenção de Fotos e Vídeos.
+		Programa_TirarFoto
+		Programa_GravarWebCam	
+Conclusões e Comentários Finais
+Referências
+	 Using OpenCV with gcc and Cmake:
+	https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html
+	 Getting Started with Images: https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html
+	 Reading and Writing Videos using OpenCV: https://learnopencv.com/reading-and-writing-
+	videos-using-opencv/
