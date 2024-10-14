@@ -125,18 +125,6 @@ background-color: white;
     color: #089b28;
   }
 
-.banner__agricultura {
-    background-image: url(../assets/plantacao.jpg);
-}
-
-.banner__ia-generativa {
-    background-image: url(../assets/ia.png);
-}
-
-.banner__cultivo {
-    background-image: url(../assets/fazendas\ verticais.jpg);
-}
-
 .titulo {
     margin-left: auto;
     margin-right: auto; 
