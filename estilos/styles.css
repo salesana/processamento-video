@@ -15,22 +15,11 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
-/* Hover effect */
-.menu_hamburguer:hover {
-    transform: scale(1.1);  /* Slightly increase the size when hovering */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); /* Adds a shadow on hover */
-}
-
-
 .navegacao__lista {
     display: none;
     position: absolute;
     top: 100%;
     width: 60vw;
-}
-
-.navegacao__lista:hover {
-    box-shadow: 4px 4px 10px rgba(39, 188, 5, 0.3); /* Adds a shadow on hover */
 }
 
 .lista__botao {
