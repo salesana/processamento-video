@@ -19,48 +19,71 @@
     <section class="lab">
         <h2 class="titulo_lab">Laboratório 01 - Imagem e Captura de Vídeo  </h2>
 
-        <h3 class="intro">I. Introdução</h3>
-        <p class="texto_padrao">O laboratório realizado consistiu em uma experiência prática de captura, edição e processamento de imagens e vídeos. Neste experimento os objetivos principais são capturar e visualizar imagens, bem como gravar vídeos, explorando ajustes de iluminação e configurações de filmadoras e dispositivos móveis. Através do uso de uma webcam Life V600, otimizamos a qualidade das imagens e vídeos produzidos, além de termos realizado ajustes essenciais para garantir resultados de alta qualidade.</p>
-        <p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
+			<h3 class="intro">I. Introdução</h3>
+				<p class="texto_padrao">O laboratório realizado consistiu em uma experiência introdutória prática de captura, edição e processamento de imagens e vídeos, via aplicações desenvolvidas com linguagem C++ e compilação através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
 
-        <h4 class="subtitulo_lab"> II. Fundamentos Básicos</h4>
-        
-        <h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
-        <li class="texto_padrao"> No laboratório de Processamento de Vídeo com OpenCV, seguiu-se uma série de etapas para utilizar a OpenCV tanto em Python quanto em C++, sem a necessidade de instalar o Miniconda ou a OpenCV, já que esses pacotes estavam previamente instalados no sistema. 
-         </li>
-          <li class="texto_padrao"> - Na Parte 1, como o Miniconda já estava configurado e com todas as dependências da OpenCV prontas, foi possível executar um programa de teste em C++, confirmando que a instalação estava correta.
-          </li>
-          <li class="texto_padrao"> - Na Parte 2, desenvolveu-se um programa em C++ para exibir uma imagem utilizando a OpenCV. Criou-se o código no arquivo "DisplayImage.cpp" e configurou-se o arquivo CMakeLists.txt para definir as dependências e a compilação. Com o ambiente já preparado, usou-se o CMake e o GCC para compilar e executar o programa, que exibiu uma imagem como resultado.
-          </li>
-         
-          <li class="texto_padrao"> O laboratório focou na execução e compilação de programas utilizando OpenCV, sem a necessidade de realizar instalações adicionais, aproveitando o ambiente já configurado.</li>
-        </li>
-     
-          <h4 class="subtitulo_lab"> III. Materiais e Métodos </h4>
+			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
+			
+				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
 
-          <h4 class="subtitulo_lab2"> III. a) Materiais </h4>
-          <li class="texto_padrao"> - Webcam Life Microsoft</li>
-          <li class="texto_padrao"> - Biblioteca OpenCV </li>
-          <li class="texto_padrao"> - Computador com sistema operacional Linux 22.04 </li>
-
-          <h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
-         
-          <h4 class="subtitulo_lab"> IV. Resultados e Análises </h4>
-
-
-          <p class="texto_padrao"> a) Integrante Ana Paula Sales</p>
-          <img src="" alt="Ana Paula" width="525px" height="500px">
-   
-     
-
-          <h4 class="subtitulo_lab3"> V. Vídeo com resolução 848x480: </h4>
-          <video src="https://od.lk/s/M18yOTUyMTA2ODlf/Video%20Original%20848x480.mp4" type="video/mp4" controls>
-        </video>
+		
+				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
+		
+					<p class="texto_padrao">Neste experimento, o principal objetivo foi capturar e visualizar imagens, bem como gravar vídeos, 
+						explorando ajustes de iluminação e configurações de filmadoras e dispositivos móveis. Através do uso de uma WebCam 
+						"tradicional", otimizando a qualidade das imagens e vídeos produzidos, além de realizar ajustes essenciais para garantir 
+						resultados de qualidade satisfatória. Ademais, o experimento também foi responsável por introduzir os grupos às técnicas 
+						de escrita e compilação de programas para tratamento de imagens e vídeos, através da aplicavação "OpenCV" e a linguagem C++.
+					</p>
     
+			<h3 class="subtitulo_lab"> III. Materiais e Métodos </h3>
 
-        <h4 class="subtitulo_lab"> VI. Conclusões e Comentários Finais </h4>
-        <p class="texto_padrao">Os resultados deste estudo sugerem que os celulares são uma boa opção para tirar fotos em ambientes internos, desde que haja uma boa iluminação. No entanto, as câmeras profissionais ainda são a melhor opção para obter imagens com alta qualidade e baixo nível de distorção.</p>
+				<h4 class="subtitulo_lab"> III. a) Materiais </h4>
+					<li class="texto_padrao">Webcam - Microsoft LifeCam VX800 </li>
+					<li class="texto_padrao">Software OpenCV </li>
+					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
 
+				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
+					<p class="texto_padrao">Utilizando uma instância do Ubuntu versõa 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
+						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
+						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
+						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
+						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
+						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável.
+					</p>
+         
+			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
+			
+				<h4 class="subtitulo_lab2">Leitura e conversão de imagens:</h4>
+					<p class="texto_padrao">
+					EXPLICAR funcionamento do programa LerImagem e COLOCAR ambas as imagens do messi kkkk
+					</p>
+					
+				<h4 class="subtitulo_lab2">Leitura e gravação de vídeos:</h4>
+					<p class="texto_padrao">
+					EXPLICAR, com tabela, os 5 códigos do tutorial https://www.dropbox.com/sh/lxwdb6egjop5pz5/AAB2GIrH3shuIJX5sjMe8R_xa?dl=1
+					EXPLICAR funcionamento do programa LerVideos  e linkar.
+					</p>
+					
+				<h4 class="subtitulo_lab2">Obtenção de fotos e vídeos:</h4>
+					<p class="texto_padrao">
+					EXPLICAR funcionamento dos códigos Programa_TirarFoto e Programa_GravarWebCam.
+					ADICIONAR fotos e vídeos criados com os programas.
+					</p>
+
+				 <h4 class="subtitulo_lab"> V. Vídeo com resolução 848x480: </h4>
+					<video src="https://od.lk/s/M18yOTUyMTA2ODlf/Video%20Original%20848x480.mp4" type="video/mp4" controls></video>
+    
+			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
+				<p class="texto_padrao">blablablabla</p>
+			
+			<h3 class="subtitulo_lab">VI. Referências</h3>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html">Using OpenCV with gcc and Cmake</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">Getting Started with Images</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">Reading and Writing Videos using OpenCV</a>
+				</p>
       </div>
     </footer>
 </body>
