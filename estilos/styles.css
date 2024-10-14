@@ -12,7 +12,6 @@
     margin-top: 2.5em;
     margin-left: 50%;
     cursor: pointer; /* Add a pointer to indicate it's clickable */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .navegacao__lista {
