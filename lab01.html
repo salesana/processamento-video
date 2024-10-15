@@ -1,6 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
+	<style>
+	table, th, td {
+	  border: 1px solid black;
+	}
+	</style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,13 +13,9 @@
     <link rel="icon" type="image/png" href="images/ufpng.png">
     <link rel="stylesheet" href="estilos/LAB.css">
     <link rel="stylesheet" href="estilos/reset.css">
-    <ul>
       <a href="relatorios.html" class="home-button">Retornar à aba Relatórios</a>
-
-        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo New Ways">
-
-        </div>
-</header>
+        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo UFABC"></img>
+</head>
 <body>
     <section class="lab">
         <h2 class="titulo_lab">Laboratório 01 - Imagem e Captura de Vídeo  </h2>
@@ -54,11 +55,13 @@
          
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
 			
-				<h4 class="subtitulo_lab2">Leitura e conversão de imagens:</h4>
+				<h4 class="subtitulo_lab2">i. Leitura e conversão de imagens:</h4>
 					<p class="texto_padrao">
 					EXPLICAR funcionamento do programa LerImagem e COLOCAR ambas as imagens do messi kkkk
 					</p>
-				<table style="width:100%">
+					
+				<h4 class="subtitulo_lab2">ii. Leitura e gravação de vídeos:</h4>
+					<table border="2">
 				  <tr>
 					<th>Programa</th>
 					<th>Função</th>
@@ -66,45 +69,54 @@
 				  <tr>
 					<td>video_read_from_file</td>
 					<td>Exibe dado vídeo em formato ".mp4" nas especificações originais, ou seja, número de frames 
-					total e frames por segundo. É interrompido ao final do vídeo ou quando o usuário apertar a tecla "q".
+						total e frames por segundo. É interrompido ao final do vídeo ou quando o usuário apertar a tecla "q".
 					</td>
 				  </tr>
 				  <tr>
 					<td>video_read_from_image_sequence</td>
-					<td>Exibe ...
+					<td>Exibe uma sequência de imagens dada como vídeo, onde cada imagem se torna um frame.
+						Aguarda até finalizarem as imagens para encerrar ou quando o usuário apertar a tecla "q".
 					</td>
 				  </tr>
 				  <tr>
 					<td>video_read_from_webcam</td>
-					<td>Exibe ...
+					<td>Exibe uma pré-exibição de vídeo de uma webcam conectada ao computador. Encerra quando o usuário
+						apertar a tecla "q" ou quando a webcam for desconectada.
 					</td>
 				  </tr>
 				  <tr>
 					<td>video_write_from_webcam</td>
-					<td>Exibe ...
+					<td>Similarmente à função anterior, além de exibir uma pré-exibição de vídeo de uma webcam conectada
+						ao computador, ao finalizar o programa, seja por input do usuário ou por desconexão da câmera, todos
+						os frames obtidos são gravados em formato ".avi" formando um vídeo. É possível especificar o número de
+						frames por segundo. A altura e largura da imagem são definidos pelas especificações máximas da webcam.
 					</td>
 				  </tr>
 				  <tr>
 					<td>video_write_to_file</td>
-					<td>Exibe ...
+					<td>Exibe vídeo em formato ".mp4" com as especificações originais e escreve um novo arquivo do mesmo vídeo, agora,
+					porém, em formato ".avi".
 					</td>
 				  </tr>
 				</table>
-					
-				<h4 class="subtitulo_lab2">Leitura e gravação de vídeos:</h4>
-					<p class="texto_padrao">
-					EXPLICAR, com tabela, os 5 códigos do tutorial https://www.dropbox.com/sh/lxwdb6egjop5pz5/AAB2GIrH3shuIJX5sjMe8R_xa?dl=1
-					EXPLICAR funcionamento do programa LerVideos  e linkar.
-					</p>
-					
-				<h4 class="subtitulo_lab2">Obtenção de fotos e vídeos:</h4>
+				<br>
+				<p class="texto_padrao">
+					Todos os códigos fonte estudados e analisados podem ser encontrados e baixados 
+					<a href="https://www.dropbox.com/sh/lxwdb6egjop5pz5/AAB2GIrH3shuIJX5sjMe8R_xa?dl=1">aqui</a>.
+				</p>
+				<br>
+				<p class="texto_padrao">
+					O programa LerVideos foi criado adaptando o código fonte "video_read_from_file", de maneira que, o vídeo a ser
+					exibido agora é o arquivo fornecido: "big_buck_bunny.mp4". O programa é finalizado ao final da exibição ou ao apertar
+					a tecla "q" durante sua execução. O arquivo pode ser citado pode ser visualizado abaixo:	
+				</p>
+				<br>
+				<video src="https://github.com/salesana/processamento-video/blob/main/laboratorio01/Programa_LerVideos/Resources/big_buck_bunny.mp4" type="video/mp4" controls></video>
+				<h4 class="subtitulo_lab2">iii. Obtenção de fotos e vídeos:</h4>
 					<p class="texto_padrao">
 					EXPLICAR funcionamento dos códigos Programa_TirarFoto e Programa_GravarWebCam.
 					ADICIONAR fotos e vídeos criados com os programas.
 					</p>
-
-				 <h4 class="subtitulo_lab"> V. Vídeo com resolução 848x480: </h4>
-					<video src="https://od.lk/s/M18yOTUyMTA2ODlf/Video%20Original%20848x480.mp4" type="video/mp4" controls></video>
     
 			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
 				<p class="texto_padrao">blablablabla</p>
@@ -116,7 +128,5 @@
 				</p>
 				<p class="texto_padrao"> <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">Reading and Writing Videos using OpenCV</a>
 				</p>
-      </div>
-    </footer>
 </body>
 </html>
