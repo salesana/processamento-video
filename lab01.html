@@ -1,12 +1,7 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-	<style>
-	table, th, td {
-	  border: 1px solid black;
-	}
-	</style>
-    <meta charset="UTF-8">
+	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Laboratório 01 - Processamento de Vídeo</title>
@@ -57,48 +52,38 @@
 			
 				<h4 class="subtitulo_lab2">i. Leitura e conversão de imagens:</h4>
 					<p class="texto_padrao">
-					EXPLICAR funcionamento do programa LerImagem e COLOCAR ambas as imagens do messi kkkk
+					O programa disponibilizado <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">aqui</a>,
+					é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e, ao ser encerrado, converter e gravar
+					a mesma imagem em nova codificação ".png".
+					Codificado em linguagem C++, este programa pode ser dividido em três partes. A primeira é responsável por importar
+					os "módulos" necessários para sua execução,	são eles:
+						<li class="texto_padrao">"core" - fornece funções de "fundação", ou seja, as bases de construção do programa;</li>
+						<li class="texto_padrao">"imgcodecs" - fornece funções para leitura e escrita de arquivos de imagem;</li>
+						<li class="texto_padrao">"highgui" - fornece funções para interação com a interface gráfica (GUI), para que seja possível visualizar o arquivo de imagem em janela.</li>
+						<br>
+						A próxima parte do código é a principal (main), onde é definido e carregada a imagem a ser lida, informando seu endereço. No caso,
+						o arquivo é o "messi.jpg" fornecido via moodle. Além disso, também é definido o formato em que o arquivo de imagem será lido. Neste código,
+						está definido o formato padrão "BGR 8-bit". </p>
+					<p class"texto_padrao">	
+						Depois de carregado, os dados do arquivo são salvos no objeto "cv::Mat" e, logo em sequência, é feito uma checagem para conferir
+						se foi salvo corretamente. A próxima etapa exibe a imagem carregada em uma janela, através da função "cv::imshow". Através da função
+						"cv::WaitKey" é definido que a imagem será exibida em janela indefinitamente até que o usuário aperte a tecla "s" do teclado, e então,
+						o arquivo será fechado.
+					</p>
+					<p class="texto_padrao">
+						Ao mesmo instante que é pressionada a tecla "s", é iniciada a terceira e última parte do código. Esta parte salvará os dados da imagem carregados
+						no objeto "cv::Mat" em um novo arquivo de extensão ".png" de mesmo nome. Para isso, é utilizada função "cv::imwrite".
+					</p>
+					<p class="texto_padrao">
+						Abaixo, é possível visualizar ambos os arquivos de imagem utilizados, em primeiro o arquivo codificação ".jpg" e, ao seu lado,
+						em ".png":
+						<br>
+						<img src="./laboratorio01/Programa_LerImagem/messi5.jpg">
+						<img src="./laboratorio01/Programa_LerImagem/messi5.png">
 					</p>
 					
 				<h4 class="subtitulo_lab2">ii. Leitura e gravação de vídeos:</h4>
-					<table border="2">
-				  <tr>
-					<th>Programa</th>
-					<th>Função</th>
-				  </tr>
-				  <tr>
-					<td>video_read_from_file</td>
-					<td>Exibe dado vídeo em formato ".mp4" nas especificações originais, ou seja, número de frames 
-						total e frames por segundo. É interrompido ao final do vídeo ou quando o usuário apertar a tecla "q".
-					</td>
-				  </tr>
-				  <tr>
-					<td>video_read_from_image_sequence</td>
-					<td>Exibe uma sequência de imagens dada como vídeo, onde cada imagem se torna um frame.
-						Aguarda até finalizarem as imagens para encerrar ou quando o usuário apertar a tecla "q".
-					</td>
-				  </tr>
-				  <tr>
-					<td>video_read_from_webcam</td>
-					<td>Exibe uma pré-exibição de vídeo de uma webcam conectada ao computador. Encerra quando o usuário
-						apertar a tecla "q" ou quando a webcam for desconectada.
-					</td>
-				  </tr>
-				  <tr>
-					<td>video_write_from_webcam</td>
-					<td>Similarmente à função anterior, além de exibir uma pré-exibição de vídeo de uma webcam conectada
-						ao computador, ao finalizar o programa, seja por input do usuário ou por desconexão da câmera, todos
-						os frames obtidos são gravados em formato ".avi" formando um vídeo. É possível especificar o número de
-						frames por segundo. A altura e largura da imagem são definidos pelas especificações máximas da webcam.
-					</td>
-				  </tr>
-				  <tr>
-					<td>video_write_to_file</td>
-					<td>Exibe vídeo em formato ".mp4" com as especificações originais e escreve um novo arquivo do mesmo vídeo, agora,
-					porém, em formato ".avi".
-					</td>
-				  </tr>
-				</table>
+					<img src="./laboratorio01/tabela_lab01.png">					
 				<br>
 				<p class="texto_padrao">
 					Todos os códigos fonte estudados e analisados podem ser encontrados e baixados 
