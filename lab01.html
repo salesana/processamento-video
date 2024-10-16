@@ -116,10 +116,14 @@
 					<img src="./laboratorio01/avatares_grupo.png" class="center">
 					<br>
 					<p class="texto_padrao">
-						Por fim, foram gravados 2 vídeos de objetos e 2 vídeos de integrantes do grupo, utilizando o programa "Programa_GravarWebCam", que é uma
-						adaptação do código fonte "video_write_from_webcam", onde, os arquivos resultantes são gerados em ".mp4", já que, o formato ".avi", gerado pelo
-						código original, não pode ser exibido em páginas criadas em linguagem html. Metade dos vídeos apresenta movimentos lentos e a outra metade, 
+						Por fim, foram gravados 2 vídeos de objetos e 2 vídeos de integrantes do grupo, metade dos vídeos apresenta movimentos lentos e a outra metade, 
 						movimentos rápidos.
+						<br>
+						Para gravação, foi utilizado o programa "Programa_GravarWebCam", que é uma adaptação do código fonte "video_write_from_webcam", onde, os arquivos
+						resultantes são gerados em ".mp4", já que, o formato ".avi", gerado pelo código original, não pode ser exibido em páginas criadas em linguagem html. 
+						<br>
+						A adaptação consistiu em, além de alterar a extensão do arquivo final "output" para ".mp4", também foi necessário alterar o "codec", ou seja, o formato
+						do codificador/decodificador do vídeo para o formato "h264", que é a codificação mais utilizada em mídias disponibilizadas via web.
 					</p>
 					<p class="texto_padrao">
 						Objeto - Lento:
@@ -146,7 +150,6 @@
 						Integrantes - Rápido:
 						<br>
 					</p>
-					<video src="./laboratorio01/Videos/edson_rapido.avi" type="video/mp4" controls></video>
 			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
 				<p class="texto_padrao">blablablabla</p>
 			
