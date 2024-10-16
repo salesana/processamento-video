@@ -57,23 +57,25 @@
 						a mesma imagem em nova codificação ".png".
 						Codificado em linguagem C++, este programa pode ser dividido em três partes. A primeira é responsável por importar
 						os "módulos" necessários para sua execução,	são eles:
+					</p>
 							<li class="texto_padrao">"core" - fornece funções de "fundação", ou seja, as bases de construção do programa;</li>
 							<li class="texto_padrao">"imgcodecs" - fornece funções para leitura e escrita de arquivos de imagem;</li>
 							<li class="texto_padrao">"highgui" - fornece funções para interação com a interface gráfica (GUI), para que seja possível visualizar o arquivo de imagem em janela.</li>
-						<br>
+					
+	    				<p class="texto_padrao">
 						A próxima parte do código é a principal (main), onde é definido e carregada a imagem a ser lida, informando seu endereço. No caso,
 						o arquivo é o "messi.jpg" fornecido via moodle. Além disso, também é definido o formato em que o arquivo de imagem será lido. Neste código,
 						está definido o formato padrão "BGR 8-bit".
 					</p>
 					<p class"texto_padrao">	
-						Depois de carregado, os dados do arquivo são salvos no objeto "cv::Mat" e, logo em sequência, é feito uma checagem para conferir
-						se foi salvo corretamente. A próxima etapa exibe a imagem carregada em uma janela, através da função "cv::imshow". Através da função
-						"cv::WaitKey" é definido que a imagem será exibida em janela indefinitamente até que o usuário aperte a tecla "s" do teclado, e então,
-						o arquivo será fechado.
+					Depois de carregado, os dados do arquivo são salvos no objeto "cv::Mat" e, logo em sequência, é feito uma checagem para conferir
+					se foi salvo corretamente. A próxima etapa exibe a imagem carregada em uma janela, através da função "cv::imshow". Através da função
+					"cv::WaitKey" é definido que a imagem será exibida em janela indefinitamente até que o usuário aperte a tecla "s" do teclado, e então,
+					o arquivo será fechado.
 					</p>
 					<p class="texto_padrao">
-						Ao mesmo instante que é pressionada a tecla "s", é iniciada a terceira e última parte do código. Esta parte salvará os dados da imagem carregados
-						no objeto "cv::Mat" em um novo arquivo de extensão ".png" de mesmo nome. Para isso, é utilizada função "cv::imwrite".
+					Ao mesmo instante que é pressionada a tecla "s", é iniciada a terceira e última parte do código. Esta parte salvará os dados da imagem carregados
+					no objeto "cv::Mat" em um novo arquivo de extensão ".png" de mesmo nome. Para isso, é utilizada função "cv::imwrite".
 					</p>
 					<p class="texto_padrao">
 						Abaixo, é possível visualizar ambos os arquivos de imagem utilizados, em primeiro o arquivo codificação ".jpg" e o próximo em ".png":
