@@ -23,7 +23,7 @@ int main()
 	int fps = 20;
     
     // Initialize video writer object
-	VideoWriter output("output.avi", VideoWriter::fourcc('M', 'J', 'P', 'G'), fps, frame_size);
+	VideoWriter output("output.mp4", VideoWriter::fourcc('h', '2', '6', '4'), fps, frame_size);
 	
     while (vid_capture.isOpened())
     {
