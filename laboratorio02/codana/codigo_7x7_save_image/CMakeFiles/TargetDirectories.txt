@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/anasales/lab02/codigo_7x7_save_image/CMakeFiles/Smothing.dir
+/home/ufabc/Documentos/anasales/lab02/codigo_7x7_save_image/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/anasales/lab02/codigo_7x7_save_image/CMakeFiles/rebuild_cache.dir
