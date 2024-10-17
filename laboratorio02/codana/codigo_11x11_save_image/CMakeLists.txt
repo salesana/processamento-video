@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Smothing )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Smothing Smothing.cpp )
+target_link_libraries( Smothing ${OpenCV_LIBS} )
