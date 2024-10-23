@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Filtragem_11x11 )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Filtragem_11x11 Filtragem_11x11.cpp )
+target_link_libraries( Filtragem_11x11 ${OpenCV_LIBS} )

@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Filtragem_5x5 )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Filtragem_5x5 Filtragem_5x5.cpp )
+target_link_libraries( Filtragem_5x5 ${OpenCV_LIBS} )

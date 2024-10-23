@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Filtragem_7x7 )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Filtragem_7x7 Filtragem_7x7.cpp )
+target_link_libraries( Filtragem_7x7 ${OpenCV_LIBS} )
