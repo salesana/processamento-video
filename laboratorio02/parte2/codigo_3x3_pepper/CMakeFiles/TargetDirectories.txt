@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/codigo_3x3_pepper/CMakeFiles/Smothing.dir
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/codigo_3x3_pepper/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/codigo_3x3_pepper/CMakeFiles/rebuild_cache.dir
