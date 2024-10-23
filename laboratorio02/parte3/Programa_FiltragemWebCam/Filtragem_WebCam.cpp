@@ -56,7 +56,7 @@ int main()
             if (key == 's')
             {
             	output.write(median);
-                cout << "Key q is pressed by the user. Stopping the video" << endl;
+                cout << "Key s is pressed by the user. Stopping the video" << endl;
                 break;
             }
         }
