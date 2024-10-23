@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/salpimenta/CMakeFiles/SalPimenta.dir
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/salpimenta/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/anasales/lab02/saltpeppernoise/salpimenta/CMakeFiles/rebuild_cache.dir
