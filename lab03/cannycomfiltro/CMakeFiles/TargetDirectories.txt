@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/anasales/lab03/canny/CMakeFiles/canny.dir
+/home/ufabc/Documentos/anasales/lab03/canny/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/anasales/lab03/canny/CMakeFiles/rebuild_cache.dir
