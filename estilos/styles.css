@@ -257,9 +257,8 @@ background-color: white;
     font-weight: bold;
     font-size: 1.5rem;        /* Keeps the font smaller */
     text-align: center;       /* Centers the text horizontally */
-    margin: -20px auto 0 auto; /* Moves the text upwards (negative margin) */
+    margin: -20px auto 20px auto; /* Adds 20px space at the bottom */
     width: 100%;              /* Ensures the element takes up the full width */
-    font-weight: bold;        /* Makes the text bold */
 }
 
 

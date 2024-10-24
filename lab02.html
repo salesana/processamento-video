@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório 01 - Processamento de Vídeo</title>
+    <link rel="icon" type="image/png" href="images/ufpng.png">
+    <link rel="stylesheet" href="estilos/LAB.css">
+    <link rel="stylesheet" href="estilos/reset.css">
+      <a href="relatorios.html" class="home-button">Retornar à aba Relatórios</a>
+        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo UFABC"></img>
+</head>
+<body>
+    <section class="lab">
+        <h2 class="titulo_lab">Laboratório 02 - Imagem e Captura de Vídeo  </h2>
+
+			<h3 class="intro">I. Introdução</h3>
+				<p class="texto_padrao">O laboratório realizado consistiu em uma experiência introdutória prática de captura, edição e processamento de imagens e vídeos, via aplicações desenvolvidas com linguagem C++ e compilação através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
+
+			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
+			
+				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
+
+		
+				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
+		
+					<p class="texto_padrao">Neste experimento, o principal objetivo foi capturar e visualizar imagens, bem como gravar vídeos, 
+						explorando ajustes de iluminação e configurações de filmadoras e dispositivos móveis. Através do uso de uma WebCam 
+						"tradicional", otimizando a qualidade das imagens e vídeos produzidos, além de realizar ajustes essenciais para garantir 
+						resultados de qualidade satisfatória. Ademais, o experimento também foi responsável por introduzir os grupos às técnicas 
+						de escrita e compilação de programas para tratamento de imagens e vídeos, através da aplicavação "OpenCV" e a linguagem C++.
+					</p>
+    
+			<h3 class="subtitulo_lab"> III. Materiais e Métodos </h3>
+
+				<h4 class="subtitulo_lab"> III. a) Materiais </h4>
+					<li class="texto_padrao">Webcam - Microsoft LifeCam VX800 </li>
+					<li class="texto_padrao">Software OpenCV </li>
+					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
+
+				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
+					<p class="texto_padrao">Utilizando uma instância do Ubuntu versõa 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
+						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
+						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
+						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
+						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
+						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável.
+					</p>
+         
+			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
+			
+				<h4 class="subtitulo_lab2">i. Leitura e conversão de imagens:</h4>
+					<p class="texto_padrao">
+						O programa disponibilizado <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">aqui</a>,
+						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e, ao ser encerrado, converter e gravar
+						a mesma imagem em nova codificação ".png".
+						Codificado em linguagem C++, este programa pode ser dividido em três partes. A primeira é responsável por importar
+						os "módulos" necessários para sua execução,	são eles:
+					</p>
+							<li class="texto_padrao">"core" - fornece funções de "fundação", ou seja, as bases de construção do programa;</li>
+							<li class="texto_padrao">"imgcodecs" - fornece funções para leitura e escrita de arquivos de imagem;</li>
+							<li class="texto_padrao">"highgui" - fornece funções para interação com a interface gráfica (GUI), para que seja possível visualizar o arquivo de imagem em janela.</li>
+					
+	    				<p class="texto_padrao">
+						A próxima parte do código é a principal (main), onde é definido e carregada a imagem a ser lida, informando seu endereço. No caso,
+						o arquivo é o "messi.jpg" fornecido via moodle. Além disso, também é definido o formato em que o arquivo de imagem será lido. Neste código,
+						está definido o formato padrão "BGR 8-bit".
+					</p>
+					<p class="texto_padrao">	
+					Depois de carregado, os dados do arquivo são salvos no objeto "cv::Mat" e, logo em sequência, é feito uma checagem para conferir
+					se foi salvo corretamente. A próxima etapa exibe a imagem carregada em uma janela, através da função "cv::imshow". Através da função
+					"cv::WaitKey" é definido que a imagem será exibida em janela indefinitamente até que o usuário aperte a tecla "s" do teclado, e então,
+					o arquivo será fechado.
+					</p>
+					<p class="texto_padrao">
+					Ao mesmo instante que é pressionada a tecla "s", é iniciada a terceira e última parte do código. Esta parte salvará os dados da imagem carregados
+					no objeto "cv::Mat" em um novo arquivo de extensão ".png" de mesmo nome. Para isso, é utilizada função "cv::imwrite".
+					</p>
+					<p class="texto_padrao">
+						Abaixo, é possível visualizar ambos os arquivos de imagem utilizados, em primeiro o arquivo codificação ".jpg" e o próximo em ".png":
+					</p>
+					<img src="./laboratorio01/Programa_LerImagem/messi5.jpg" class="center">
+					<img src="./laboratorio01/Programa_LerImagem/messi5.png" class="center">
+					<br>
+				<h4 class="subtitulo_lab2">ii. Leitura e gravação de vídeos:</h4>
+				<br>
+					<img src="./laboratorio01/tabela_lab01.png">					
+				<br>
+				<p class="texto_padrao">
+					Todos os códigos fonte estudados e analisados podem ser encontrados e baixados 
+					<a href="https://www.dropbox.com/sh/lxwdb6egjop5pz5/AAB2GIrH3shuIJX5sjMe8R_xa?dl=1">aqui</a>.
+				</p>
+				<br>
+				<p class="texto_padrao">
+					O programa LerVideos foi criado adaptando o código fonte "video_read_from_file", de maneira que, o vídeo a ser
+					exibido agora é o arquivo fornecido: "big_buck_bunny.mp4". O programa é finalizado ao final da exibição ou ao apertar
+					a tecla "q" durante sua execução. O arquivo pode ser citado pode ser visualizado abaixo:	
+				</p>
+				<br>
+				<video src="./laboratorio01/Programa_LerVideos/Resources/big_buck_bunny.mp4" type="video/mp4" controls></video>
+				<h4 class="subtitulo_lab2">iii. Obtenção de fotos e vídeos:</h4>
+					<p class="texto_padrao">
+						As imagens exibidas a seguir foram obtidas através do programa "Programa_TirarFoto" desenvolvido pelo grupo. Este programa
+						foi criado a partir de uma simples adaptação do código fonte "video_write_from_webcam.cpp", que faz com que o único frame a ser
+						salvo e gravado no dispositivo é o último, obtido quando o usuário pressionar a tecla "q" de seu teclado. Essa ação executa a função
+						".write" que salvará o último frame registrado pela WebCam e, em sequência, encerra o programa. Outra pequena adaptação foi salvar o 
+						novo arquivo com a extensão ".png" ao invés de ".avi", utilizada para arquivos de vídeo. Confira a imagems capturada do grupo abaixo:
+					</p>
+	    				<br>
+					<img src="./laboratorio01/foto_grupo_2.png" class="center">
+					<br>
+					<p class="texto_padrao">
+						A imagem abaixo, composta pelos avatares selecionados por cada um dos integrantes do grupo, foi desenvolvida utilizando o software web
+						gratuito "Canva":
+					</p>
+	    				<br>
+					<img src="./laboratorio01/avatares_grupo.png" class="center">
+					<br>
+					<p class="texto_padrao">
+						Por fim, foram gravados 2 vídeos de objetos e 2 vídeos de integrantes do grupo, metade dos vídeos apresenta movimentos lentos e a outra metade, 
+						movimentos rápidos.
+						<br>
+						Para gravação, foi utilizado o programa "Programa_GravarWebCam", que é uma adaptação do código fonte "video_write_from_webcam", onde, os arquivos
+						resultantes são gerados em ".mp4", já que, o formato ".avi", gerado pelo código original, não pode ser exibido em páginas criadas em linguagem html. 
+						<br>
+						A adaptação consistiu em, além de alterar a extensão do arquivo final "output" para ".mp4", também foi necessário alterar o "codec", ou seja, o formato
+						do codificador/decodificador do vídeo para o formato "h264", que é a codificação mais utilizada em mídias disponibilizadas via web.
+					</p>
+					<p class="texto_padrao">
+						Objeto - Lento:
+						<br>
+					</p>
+					<video src="./laboratorio01/Videos/oculos_lento.mp4" type="video/mp4" controls></video>
+					<br>
+					<p class="texto_padrao">
+						Objeto - Rápido:
+						<br>
+					</p>
+					<video src="./laboratorio01/Videos/mouse_rapido.mp4" type="video/mp4" controls></video>
+					<p class="texto_padrao">
+						Integrantes - Lento:
+						<br>
+					</p>
+					<video controls> 
+						<source src="./laboratorio01/Videos/caio_lento.mp4" type="video/mp4">
+					</video>
+					<br>
+	    				<br>
+	    				<p class="texto_padrao">
+						Integrantes - Rápido:
+						<br>
+					</p>
+	    				<video src="./laboratorio01/Videos/edson_rapido.mp4" type="video/mp4" controls></video>
+			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
+				<p class="texto_padrao">Como o laboratório 01 conseguimos ler, filmar e gravar videos com o OpenCV de forma satisfatória. A qualidade da gravação fica com borrões quando há movimentos rápidos e as fotos ficam pixeladas facilmente por conta da resolução baixa da camera. Na parte de leitura e conversão de imagem não apresentou nenhuma distorção e com a leitura de video não houveram problemas.
+Pelo fato de que para alterar a leitura de qualquer arquivo é necessário alterar os arquivos .cpp não diria que é uma forma eficiente de manejar uma quantidade grande de dados, porém funciona. </p>
+			
+			<h3 class="subtitulo_lab">VI. Referências</h3>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html">Using OpenCV with gcc and Cmake</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">Getting Started with Images</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">Reading and Writing Videos using OpenCV</a>
+				</p>
+	    			<p class="texto_padrao"> <a href="https://stackoverflow.com/questions/30103077/what-is-the-codec-for-mp4-videos-in-python-opencv">what is the codec for mp4 videos in python OpenCV</a>
+				</p>
+</body>
+</html>
