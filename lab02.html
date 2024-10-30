@@ -50,32 +50,10 @@
          
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
 			
-				<h4 class="subtitulo_lab2">i. Leitura e conversão de imagens:</h4>
+				<h4 class="subtitulo_lab2">i.Inclusão dos filtros:</h4>
 					<p class="texto_padrao">
 						O programa disponibilizado <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">aqui</a>,
-						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e, ao ser encerrado, converter e gravar
-						a mesma imagem em nova codificação ".png".
-						Codificado em linguagem C++, este programa pode ser dividido em três partes. A primeira é responsável por importar
-						os "módulos" necessários para sua execução,	são eles:
-					</p>
-							<li class="texto_padrao">"core" - fornece funções de "fundação", ou seja, as bases de construção do programa;</li>
-							<li class="texto_padrao">"imgcodecs" - fornece funções para leitura e escrita de arquivos de imagem;</li>
-							<li class="texto_padrao">"highgui" - fornece funções para interação com a interface gráfica (GUI), para que seja possível visualizar o arquivo de imagem em janela.</li>
-					
-	    				<p class="texto_padrao">
-						A próxima parte do código é a principal (main), onde é definido e carregada a imagem a ser lida, informando seu endereço. No caso,
-						o arquivo é o "messi.jpg" fornecido via moodle. Além disso, também é definido o formato em que o arquivo de imagem será lido. Neste código,
-						está definido o formato padrão "BGR 8-bit".
-					</p>
-					<p class="texto_padrao">	
-					Depois de carregado, os dados do arquivo são salvos no objeto "cv::Mat" e, logo em sequência, é feito uma checagem para conferir
-					se foi salvo corretamente. A próxima etapa exibe a imagem carregada em uma janela, através da função "cv::imshow". Através da função
-					"cv::WaitKey" é definido que a imagem será exibida em janela indefinitamente até que o usuário aperte a tecla "s" do teclado, e então,
-					o arquivo será fechado.
-					</p>
-					<p class="texto_padrao">
-					Ao mesmo instante que é pressionada a tecla "s", é iniciada a terceira e última parte do código. Esta parte salvará os dados da imagem carregados
-					no objeto "cv::Mat" em um novo arquivo de extensão ".png" de mesmo nome. Para isso, é utilizada função "cv::imwrite".
+						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e adicionar os filtros necessarios (adiconar mais texto e incluir e explicar o codigo usado)
 					</p>
 					<p class="texto_padrao">
 						Abaixo, é possível visualizar todas as imagens filtradas seguindo a sequencia crescente na alteracao do kernel":
@@ -132,7 +110,7 @@
 	    				<figcaption>gaussian 11x11 </figcaption>
 					</figure>
 					<br>
-				<h4 class="subtitulo_lab2">ii. Leitura e gravação de vídeos:</h4>
+				<h4 class="subtitulo_lab2">ii. Inserção do ruído "Sal e pimenta":</h4>
 				<br>
 					<img src="./laboratorio01/tabela_lab01.png">					
 				<br>
@@ -142,13 +120,68 @@
 				</p>
 				<br>
 				<p class="texto_padrao">
-					O programa LerVideos foi criado adaptando o código fonte "video_read_from_file", de maneira que, o vídeo a ser
-					exibido agora é o arquivo fornecido: "big_buck_bunny.mp4". O programa é finalizado ao final da exibição ou ao apertar
-					a tecla "q" durante sua execução. O arquivo pode ser citado pode ser visualizado abaixo:	
+					O (primeiro incluio o efeito sal e pimenta na imagem original e depois reaplicou o filtro denovo) esta aqui a imagem original com o filtro sal e pimenta:
 				</p>
-				<br>
-				<video src="./laboratorio01/Programa_LerVideos/Resources/big_buck_bunny.mp4" type="video/mp4" controls></video>
-				<h4 class="subtitulo_lab2">iii. Obtenção de fotos e vídeos:</h4>
+	    				<img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Imagem original com o filtro sal e pimenta aplicado </figcaption>
+					</figure>
+					<br>
+				<p class="texto_padrao">
+					O (primeiro incluio o efeito sal e pimenta na imagem original e depois reaplicou o filtro denovo agora as imagens do filtro depois do sal e pimenta)
+				</p>
+					<img src="./laboratorio02/parte2/codigo_3x3_pepper/bilateral_blur.jpg" class="center" >
+	    				<figcaption>Bilateral 3x3 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Bilateral 5x5 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Bilateral 7x7 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Bilateral 11x11 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/homogeneous_blur.jpg" class="center" >
+	    				<figcaption>Blur 3x3 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Blur 5x5 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Blur 7x7 Sal e pimenta</figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>Blur 11x11 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/median_blur.jpg" class="center" >
+	    				<figcaption>median 3x3 Sal e pimenta</figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>median 5x5 Sal e pimenta</figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>median 7x7 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>median 11x11 Sal e pimenta</figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/gaussian_blur.jpg" class="center" >
+	    				<figcaption>gaussian 3x3 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>gaussian 5x5 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>gaussian 7x7 Sal e pimenta </figcaption>
+					</figure>
+					<br><img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
+	    				<figcaption>gaussian 11x11 Sal e pimenta </figcaption>
+					</figure>
+					<br>
+
+	    				
+					<h4 class="subtitulo_lab2">
+					iii. Obtenção de fotos e vídeos:</h4>
 					<p class="texto_padrao">
 						As imagens exibidas a seguir foram obtidas através do programa "Programa_TirarFoto" desenvolvido pelo grupo. Este programa
 						foi criado a partir de uma simples adaptação do código fonte "video_write_from_webcam.cpp", que faz com que o único frame a ser
