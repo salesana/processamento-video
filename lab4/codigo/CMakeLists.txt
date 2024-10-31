@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project( Historigrama )
+find_package( OpenCV REQUIRED )
+include_directories( ${OpenCV_INCLUDE_DIRS} )
+add_executable( Historigrama Historigrama.cpp )
+target_link_libraries( Historigrama ${OpenCV_LIBS} )
