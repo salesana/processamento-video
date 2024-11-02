@@ -179,8 +179,10 @@ ul {
      margin-top: 35px;
      font-family: Montserrat;
     font-weight: bold;
-     font-size: 22px;
+     font-size: 20px;
      margin-top: 15px;
+     margin-left: 20px; /* Adjust the value as needed */
+     margin-bottom: 20px;
  
       }     
 
@@ -200,4 +202,25 @@ ul {
   margin-left: auto;
   margin-right: auto;
   width: 50%;
+}
+
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap; /* Allows images to wrap if the row is too long */
+    gap: 20px; /* Space between each image container */
+    justify-content: center; /* Center images in the row */
+}
+
+.image-container {
+    text-align: center;
+    width: 600px; /* Keeps each container aligned with the image width */
+}
+
+.caption {
+    font-size: 16px;
+    color: #555; /* Adjust color as needed */
+    margin-top: 8px;
+    font-weight: bold; /* Makes the caption text bold */
+    font-family: Montserrat;
 }

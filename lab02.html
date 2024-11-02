@@ -4,7 +4,7 @@
 	<meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Laboratório 01 - Processamento de Vídeo</title>
+    <title>Laboratório 02 - Processamento de Vídeo</title>
     <link rel="icon" type="image/png" href="images/ufpng.png">
     <link rel="stylesheet" href="estilos/LAB.css">
     <link rel="stylesheet" href="estilos/reset.css">
@@ -50,126 +50,224 @@
          
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
 			
-				<h4 class="subtitulo_lab2">i.Inclusão dos filtros:</h4>
+				<h4 class="subtitulo_lab2">a) Inclusão dos filtros:</h4>
 					<p class="texto_padrao">
 						O programa disponibilizado <a href=" ">aqui</a>,
 						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e adicionar os filtros necessarios (adiconar mais texto e incluir e explicar o codigo usado)
 					</p>
-					<p class="texto_padrao">
-						Abaixo, é possível visualizar todas as imagens filtradas seguindo a sequencia crescente na alteracao do kernel":
-					</p>
-					<img src="./laboratorio02/parte1/imagens/bilateral_3x3.png" class="center" >
-	    				<figcaption>Bilateral 3x3 </figcaption>
-					</figure>
-					<img src="./laboratorio02/parte1/imagens/bilateral_5x5.png" class="center" >
-	    				<figcaption>Bilateral 5x5 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/bilateral_7x7.png" class="center" >
-	    				<figcaption>Bilateral 7x7 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/bilateral_11x11.png" class="center" >
-	    				<figcaption>Bilateral 11x11</figcaption>
-					</figure>
-					<br>
-	    				<img src="./laboratorio02/parte1/imagens/blur_3x3.png" class="center" >
-	    				<figcaption>Blur 3x3 </figcaption>
-					</figure>
-					<img src="./laboratorio02/parte1/imagens/blur_5x5.png" class="center" >
-	    				<figcaption>Blur 5x5 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/blur_7x7.png" class="center" >
-	    				<figcaption>Blur 7x7</figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/blur_11x11.png" class="center" >
-	    				<figcaption>Blur 11x11 </figcaption>
-					</figure>
-					<br>
-	    				<img src="./laboratorio02/parte1/imagens/median_3x3.png" class="center" >
-	    				<figcaption>median 3x3 </figcaption>
-					</figure>
-					<img src="./laboratorio02/parte1/imagens/median_5x5.png" class="center" >
-	    				<figcaption>median 5x5 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/median_7x7.png" class="center" >
-	    				<figcaption>median 7x7 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/median_11x11.png" class="center" >
-	    				<figcaption>median 11x11 </figcaption>
-					</figure>
-					<br>
-	    				<img src="./laboratorio02/parte1/imagens/gaussian_3x3.png" class="center" >
-	    				<figcaption>gaussian 3x3 </figcaption>
-					</figure>
-					<img src="./laboratorio02/parte1/imagens/gaussian_5x5.png" class="center" >
-	    				<figcaption>gaussian 5x5 </figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/gaussian_7x7.png" class="center" >
-	    				<figcaption>gaussian 7x7</figcaption>
-					</figure>
-	    				<img src="./laboratorio02/parte1/imagens/gaussian_11x11.png" class="center" >
-	    				<figcaption>gaussian 11x11 </figcaption>
-					</figure>
-					<br>
-				<h4 class="subtitulo_lab2">ii. Inserção do ruído "Sal e pimenta":</h4>
+								
+					<p class="subtitulo_lab3">a.i) Resultados para o Kernel 3x3:</p>
+
+<div class="image-row">
+    <div class="image-container">
+        <img src="./laboratorio02/parte1/imagens/bilateral_3x3.png" alt="Bilateral 3x3" width="600px" height="500px">
+        <p class="caption">Bilateral 3x3</p>
+    </div>
+
+    <div class="image-container">
+        <img src="./laboratorio02/parte1/imagens/blur_3x3.png" alt="Blur 3x3" width="600px" height="500px">
+        <p class="caption">Blur 3x3</p>
+    </div>
+
+    <div class="image-container">
+        <img src="./laboratorio02/parte1/imagens/median_3x3.png" alt="Median 3x3" width="600px" height="500px">
+        <p class="caption">Median 3x3</p>
+    </div>
+
+    <div class="image-container">
+        <img src="./laboratorio02/parte1/imagens/gaussian_3x3.png" alt="Gaussian 3x3" width="600px" height="500px">
+        <p class="caption">Gaussian 3x3</p>
+    </div>
+</div>
+
+
+					<p class="subtitulo_lab3"> a.ii)  Resultados para o Kernel 5x5:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/bilateral_5x5.png" alt="Bilateral 5x5" width="600px" height="500px">
+							<p class="caption">Bilateral 5x5</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/blur_5x5.png" alt="Blur 5x5" width="600px" height="500px">
+							<p class="caption">Blur 5x5</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/median_5x5.png" alt="Median 5x5" width="600px" height="500px">
+							<p class="caption">Median 5x5</p>
+						</div>
 				
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/gaussian_5x5.png" alt="Gaussian 5x5" width="600px" height="500px">
+							<p class="caption">Gaussian 5x5</p>
+						</div>
+					</div>
+
+
+					<p class="subtitulo_lab3"> a.iii)  Resultados para o Kernel 7x7:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/bilateral_7x7.png" alt="Bilateral 7x7" width="600px" height="500px">
+							<p class="caption">Bilateral 7x7</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/blur_7x7.png" alt="Blur 7x7" width="600px" height="500px">
+							<p class="caption">Blur 7x7</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/median_7x7.png" alt="Median 7x7" width="600px" height="500px">
+							<p class="caption">Median 7x7</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/gaussian_7x7.png" alt="Gaussian 7x7" width="600px" height="500px">
+							<p class="caption">Gaussian 7x7</p>
+						</div>
+					</div>
+
+
+
+					<p class="subtitulo_lab3"> a.iv)  Resultados para o Kernel 11x11:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/bilateral_11x11.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">Bilateral 11x11</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/blur_11x11.png" alt="Blur 11x11" width="600px" height="500px">
+							<p class="caption">Blur 11x11</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/median_11x11.png" alt="Median 11x11" width="600px" height="500px">
+							<p class="caption">Median 11x11</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte1/imagens/gaussian_11x11.png" alt="Gaussian 11x11" width="600px" height="500px">
+							<p class="caption">Gaussian 11x11</p>
+						</div>
+					</div>
+
+			
+				<h4 class="subtitulo_lab3">b) Inserção do ruído "Sal e pimenta":</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./laboratorio02/codana/Codigo_3x3_save_image/original.jpg" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./laboratorio02/parte2/original.jpg" alt="Gaussian 11x11" width="600px" height="500px">
+						<p class="caption">Imagem ruído Sal e pimenta</p>
+					</div>
+				</div>
+				
+
+
 				<p class="texto_padrao">
-					O (primeiro incluio o efeito sal e pimenta na imagem original e depois reaplicou o filtro denovo) esta aqui a imagem original com o filtro sal e pimenta:
-				</p>
-	    				<img src="./laboratorio02/parte2/salpimenta/salt_pepper_noise_image.jpg" class="center" >
-	    				<figcaption>Imagem original com o filtro sal e pimenta aplicado </figcaption>
-					</figure>
-					<br>
-				<p class="texto_padrao">
-					O (primeiro incluio o efeito sal e pimenta na imagem original e depois reaplicou o filtro denovo agora as imagens do filtro depois do sal e pimenta)
-				</p>
-					<img src="./laboratorio02/parte2/codigo_3x3_pepper/bilateral_blur.jpg" class="center" >
-	    				<figcaption>Bilateral 3x3 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_5x5_pepper/bilateral_blur_5x5.jpg" class="center" >
-	    				<figcaption>Bilateral 5x5 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_7x7_pepper/bilateral_blur_7x7.jpg" class="center" >
-	    				<figcaption>Bilateral 7x7 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_11x11_pepper/bilateral_blur_11x11.jpg" class="center" >
-	    				<figcaption>Bilateral 11x11 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/homogeneous_blur.jpg" class="center" >
-	    				<figcaption>Blur 3x3 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_5x5_pepper/homogeneous_blur_5x5.jpg" class="center" >
-	    				<figcaption>Blur 5x5 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_7x7_pepper/homogeneous_blur_7x7.jpg" class="center" >
-	    				<figcaption>Blur 7x7 Sal e pimenta</figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_11x11_pepper/homogeneous_blur_11x11.jpg" class="center" >
-	    				<figcaption>Blur 11x11 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/median_blur.jpg" class="center" >
-	    				<figcaption>median 3x3 Sal e pimenta</figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_5x5_pepper/median_blur_5x5.jpg" class="center" >
-	    				<figcaption>median 5x5 Sal e pimenta</figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_7x7_pepper/median_blur_7x7.jpg" class="center" >
-	    				<figcaption>median 7x7 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_11x11_pepper/median_blur_11x11.jpg" class="center" >
-	    				<figcaption>median 11x11 Sal e pimenta</figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_3x3_pepper/gaussian_blur.jpg" class="center" >
-	    				<figcaption>gaussian 3x3 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_5x5_pepper/gaussian_blur_5x5.jpg" class="center" >
-	    				<figcaption>gaussian 5x5 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_7x7_pepper/gaussian_blur_7x7.jpg" class="center" >
-	    				<figcaption>gaussian 7x7 Sal e pimenta </figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte2/codigo_11x11_pepper/gaussian_blur_11x11.jpg" class="center" >
-	    				<figcaption>gaussian 11x11 Sal e pimenta </figcaption>
-					</figure>
+					Repetiu-se os passos realizados anteriormente, agora para a imagem com o ruído sal e pimenta. Abaixo, encontram-se as novas imagens filtradas:				</p>
+
+					<p class="subtitulo_lab3">b.i)  Resultados para o Kernel 3x3:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_3x3_pepper/bilateral_blur.jpg" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">Bilateral 3x3 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_3x3_pepper/median_blur.jpg" alt="Blur 11x11" width="600px" height="500px">
+							<p class="caption">Blur 3x3 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_3x3_pepper/median_blur.jpg" alt="Median 11x11" width="600px" height="500px">
+							<p class="caption">Median 3x3 - Ruído Sal e Pimenta</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_3x3_pepper/gaussian_blur.jpg" alt="Gaussian 11x11" width="600px" height="500px">
+							<p class="caption">Gaussian 3x3 - Ruído Sal e Pimenta</p>
+						</div>
+					</div>
+
+					<p class="subtitulo_lab3">b.ii)  Resultados para o Kernel 5x5:</p>
+
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_5x5_pepper/bilateral_blur_5x5.jpg" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">Bilateral 5x5 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_5x5_pepper/homogeneous_blur_5x5.jpg" alt="Blur 11x11" width="600px" height="500px">
+							<p class="caption">Blur 5x5 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_5x5_pepper/median_blur_5x5.jpg" alt="Median 11x11" width="600px" height="500px">
+							<p class="caption">Median 5x5 - Ruído Sal e Pimenta</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_5x5_pepper/gaussian_blur_5x5.jpg" alt="Gaussian 11x11" width="600px" height="500px">
+							<p class="caption">Gaussian 5x5 - Ruído Sal e Pimenta</p>
+						</div>
+					</div>
+					
+					<p class="subtitulo_lab3">b.iii)  Resultados para o Kernel 7x7:</p>
+
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_7x7_pepper/bilateral_blur_7x7.jpg" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">Bilateral 7x7 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_7x7_pepper/homogeneous_blur_7x7.jpg" alt="Blur 11x11" width="600px" height="500px">
+							<p class="caption">Blur 7x7 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_7x7_pepper/median_blur_7x7.jpg"  alt="Median 11x11" width="600px" height="500px">
+							<p class="caption">Median 7x7 - Ruído Sal e Pimenta</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_7x7_pepper/gaussian_blur_7x7.jpg" alt="Gaussian 11x11" width="600px" height="500px">
+							<p class="caption">Gaussian 7x7 - Ruído Sal e Pimenta</p>
+						</div>
+					</div>
+
+					<p class="subtitulo_lab3">b.iv)  Resultados para o Kernel 11x11:</p>
+
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_11x11_pepper/bilateral_blur_11x11.jpg" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">Bilateral 11x11 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_11x11_pepper/homogeneous_blur_11x11.jpg" alt="Blur 11x11" width="600px" height="500px">
+							<p class="caption">Blur 11x11 - Ruído Sal e Pimenta</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_11x11_pepper/median_blur_11x11.jpg" alt="Median 11x11" width="600px" height="500px">
+							<p class="caption">Median 11x11 - Ruído Sal e Pimenta</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./laboratorio02/parte2/codigo_11x11_pepper/gaussian_blur_11x11.jpg" alt="Gaussian 11x11" width="600px" height="500px">
+							<p class="caption">Gaussian 11x11 - Ruído Sal e Pimenta</p>
+						</div>
+					</div>
+				
 					<br>
 
 	    				

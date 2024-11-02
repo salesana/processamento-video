@@ -499,3 +499,19 @@ background-color: white;
   background-color: black;
   padding: 5px;
 }
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(2, auto); /* Two columns with automatic width */
+    gap: 10px; /* Space between images */
+    justify-content: center; /* Center the entire grid */
+}
+
+.image-grid figure {
+    text-align: center;
+}
+
+.image-grid img {
+    max-width: 10px; /* Set a smaller width to fit two images side by side */
+    height: auto;
+}
