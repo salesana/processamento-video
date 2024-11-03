@@ -45,33 +45,33 @@
 						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
 						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. </p>
 
-						
+
 					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
-					<p class="texto_padrao1">						
+					<p class="texto_padrao">						
 						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
          
-					<p class="texto_padrao1">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
+					<p class="texto_padrao">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
 					</p>
 
 					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
-					<p class="texto_padrao1"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
-					<p class="texto_padrao1"><span class="bold-letter">b) Gaussian Blur (Gaussiano): </span>Utiliza uma distribuição gaussiana para suavizar a imagem, preservando os detalhes de forma mais eficaz. Implementado com GaussianBlur().</p>
-					<p class="texto_padrao1"><span class="bold-letter">c) Median Blur (Mediana):</span> Substitui cada pixel pela mediana de seus vizinhos, sendo mais eficaz para remover ruídos pontuais. Implementado com medianBlur().</p>
-					<p class="texto_padrao1"><span class="bold-letter">d) Bilateral Blur:</span> Aplica suavização enquanto preserva as bordas da imagem, sendo ideal para imagens que precisam manter detalhes nas bordas. Implementado com bilateralFilter().</p>
+					<p class="texto_padrao"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
+					<p class="texto_padrao"><span class="bold-letter">b) Gaussian Blur (Gaussiano): </span>Utiliza uma distribuição gaussiana para suavizar a imagem, preservando os detalhes de forma mais eficaz. Implementado com GaussianBlur().</p>
+					<p class="texto_padrao"><span class="bold-letter">c) Median Blur (Mediana):</span> Substitui cada pixel pela mediana de seus vizinhos, sendo mais eficaz para remover ruídos pontuais. Implementado com medianBlur().</p>
+					<p class="texto_padrao"><span class="bold-letter">d) Bilateral Blur:</span> Aplica suavização enquanto preserva as bordas da imagem, sendo ideal para imagens que precisam manter detalhes nas bordas. Implementado com bilateralFilter().</p>
 					
 					<h4 class="subtitulo_lab4">- Variação dos Tamanhos de Kernel: </h4>
-					<p class="texto_padrao1">Para cada filtro, foram testados quatro tamanhos de kernel: 3x3, 5x5, 7x7 e 11x11. Essa variação de kernel foi essencial para observar os diferentes níveis de suavização:</p>
-					<p class="texto_padrao1"><span class="bold-letter">a) Kernel 3x3: </span> Suavização leve, adequada para preservação de detalhes.</p>
-					<p class="texto_padrao1"><span class="bold-letter">b) Kernel 5x5, 7x7: </span> Suavização moderada, com maior remoção de ruídos sem perda excessiva de nitidez.</p>
-					<p class="texto_padrao1"><span class="bold-letter">c) Kernel 11x11: </span> Suavização intensa, com remoção significativa de ruído, porém com possível perda de detalhes.</p>
+					<p class="texto_padrao">Para cada filtro, foram testados quatro tamanhos de kernel: 3x3, 5x5, 7x7 e 11x11. Essa variação de kernel foi essencial para observar os diferentes níveis de suavização:</p>
+					<p class="texto_padrao"><span class="bold-letter">a) Kernel 3x3: </span> Suavização leve, adequada para preservação de detalhes.</p>
+					<p class="texto_padrao"><span class="bold-letter">b) Kernel 5x5, 7x7: </span> Suavização moderada, com maior remoção de ruídos sem perda excessiva de nitidez.</p>
+					<p class="texto_padrao"><span class="bold-letter">c) Kernel 11x11: </span> Suavização intensa, com remoção significativa de ruído, porém com possível perda de detalhes.</p>
 					
 
 					<h4 class="subtitulo_lab4">- Exibição e Salvamento dos Resultados:</h4>
-						<p class="texto_padrao1"> Após aplicar cada filtro, o resultado foi exibido na janela "Smoothing Demo" e salvo automaticamente com um nome específico que identificava o tipo de filtro e o tamanho do kernel, facilitando a comparação dos resultados posteriormente.</p>
-						<p class="texto_padrao1"> Os nomes dos arquivos foram padronizados, como homogeneous_blur_3x3.jpg, gaussian_blur_5x5.jpg, entre outros, para organização dos dados gerados.</p>
+						<p class="texto_padrao"> Após aplicar cada filtro, o resultado foi exibido na janela "Smoothing Demo" e salvo automaticamente com um nome específico que identificava o tipo de filtro e o tamanho do kernel, facilitando a comparação dos resultados posteriormente.</p>
+						<p class="texto_padrao"> Os nomes dos arquivos foram padronizados, como homogeneous_blur_3x3.jpg, gaussian_blur_5x5.jpg, entre outros, para organização dos dados gerados.</p>
 					
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
-			<p class="texto_padrao1"> Com as imagens processadas, foi possível analisar os efeitos visuais de cada filtro e o impacto dos diferentes tamanhos de kernel na suavização e preservação dos detalhes.
+			<p class="texto_padrao"> Com as imagens processadas, foi possível analisar os efeitos visuais de cada filtro e o impacto dos diferentes tamanhos de kernel na suavização e preservação dos detalhes.
 				As imagens salvas permitiram uma comparação direta entre os efeitos dos diferentes filtros e tamanhos de kernel, proporcionando uma visão clara dos resultados para futuras análises.</p>
 
 				<h4 class="subtitulo_lab2">a) Inclusão dos filtros:</h4>
