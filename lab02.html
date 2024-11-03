@@ -25,9 +25,7 @@
 		
 				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
 		
-					<p class="texto_padrao">Neste experimento, o principal objetivo foi capturar e visualizar imagens, com o intuito de implementar filtros que aprimorem a imagem captada. 
-						Através do uso de uma WebCam, otimizando a qualidade das imagens e vídeos produzidos, além de realizar ajustes nos filtros:blur(), GaussianBlur(), medianBlur(), e bilateralFilter(),
-						procurando entender qual método de filtragem é mais eficiente em casa situação.
+					<p class="texto_padrao">O objetivo deste experimento foi aplicar diversos filtros de suavização em uma imagem para observar os efeitos de diferentes técnicas de suavização e tamanhos de kernel sobre a qualidade da imagem. Foram utilizados os filtros Homogeneous (média), Gaussian (gaussiano), Median (mediana) e Bilateral, com kernels de tamanhos variados: 3x3, 5x5, 7x7 e 11x11. A análise buscou identificar o impacto de cada filtro e do tamanho do kernel na preservação de detalhes e remoção de ruídos.
 					</p>
 
 
@@ -40,20 +38,45 @@
 					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
 
 				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
-					<p class="texto_padrao">Utilizando uma instância do Ubuntu versõa 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
+					<p class="texto_padrao">Utilizando uma instância do Ubuntu versão 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
 						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
 						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
 						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
 						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
-						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável.
+						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. 
 					</p>
+					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
+					<p class="texto_padrao1">						
+						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
          
+					<p class="texto_padrao1">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
+					</p>
+
+					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
+					<p class="texto_padrao1"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
+					<p class="texto_padrao1"><span class="bold-letter">b) Gaussian Blur (Gaussiano): </span>Utiliza uma distribuição gaussiana para suavizar a imagem, preservando os detalhes de forma mais eficaz. Implementado com GaussianBlur().</p>
+					<p class="texto_padrao1"><span class="bold-letter">c) Median Blur (Mediana):</span> Substitui cada pixel pela mediana de seus vizinhos, sendo mais eficaz para remover ruídos pontuais. Implementado com medianBlur().</p>
+					<p class="texto_padrao1"><span class="bold-letter">d) Bilateral Blur:</span> Aplica suavização enquanto preserva as bordas da imagem, sendo ideal para imagens que precisam manter detalhes nas bordas. Implementado com bilateralFilter().</p>
+					
+					<h4 class="subtitulo_lab4">- Variação dos Tamanhos de Kernel: </h4>
+					<p class="texto_padrao1">Para cada filtro, foram testados quatro tamanhos de kernel: 3x3, 5x5, 7x7 e 11x11. Essa variação de kernel foi essencial para observar os diferentes níveis de suavização:</p>
+					<p class="texto_padrao1"><span class="bold-letter">a) Kernel 3x3: </span> Suavização leve, adequada para preservação de detalhes.</p>
+					<p class="texto_padrao1"><span class="bold-letter">b) Kernel 5x5, 7x7: </span> Suavização moderada, com maior remoção de ruídos sem perda excessiva de nitidez.</p>
+					<p class="texto_padrao1"><span class="bold-letter">c) Kernel 11x11: </span> Suavização intensa, com remoção significativa de ruído, porém com possível perda de detalhes.</p>
+					
+
+					<h4 class="subtitulo_lab4">- Exibição e Salvamento dos Resultados:</h4>
+						<p class="texto_padrao1"> Após aplicar cada filtro, o resultado foi exibido na janela "Smoothing Demo" e salvo automaticamente com um nome específico que identificava o tipo de filtro e o tamanho do kernel, facilitando a comparação dos resultados posteriormente.</p>
+						<p class="texto_padrao1"> Os nomes dos arquivos foram padronizados, como homogeneous_blur_3x3.jpg, gaussian_blur_5x5.jpg, entre outros, para organização dos dados gerados.</p>
+					
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
-			
+			<p class="texto_padrao1"> Com as imagens processadas, foi possível analisar os efeitos visuais de cada filtro e o impacto dos diferentes tamanhos de kernel na suavização e preservação dos detalhes.
+				As imagens salvas permitiram uma comparação direta entre os efeitos dos diferentes filtros e tamanhos de kernel, proporcionando uma visão clara dos resultados para futuras análises.</p>
+
 				<h4 class="subtitulo_lab2">a) Inclusão dos filtros:</h4>
 					<p class="texto_padrao">
-						O programa disponibilizado <a href=" ">aqui</a>,
-						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e adicionar os filtros necessarios (adiconar mais texto e incluir e explicar o codigo usado)
+						O programa disponibilizado <a href="https://github.com/salesana/processamento-video/blob/main/laboratorio02/codana/Codigo_3x3_save_image/Smothing.cpp">aqui</a>,
+						é responsável por ler e exibir um arquivo de imagem em formato ".jpg" e adicionar os filtros necessarios. Neste mesmo diretório é possível encontrar os outros programas utilizados para os Kernels com configurações 5x5, 7x7 e também 11x11. O código utilizado foi o mesmo para as 4 situações, alterando apenas o tamanho do Kernel.
 					</p>
 								
 					<p class="subtitulo_lab3">a.i) Resultados para o Kernel 3x3:</p>
@@ -181,7 +204,7 @@
 						</div>
 					
 						<div class="image-container">
-							<img src="./laboratorio02/parte2/codigo_3x3_pepper/median_blur.jpg" alt="Blur 11x11" width="600px" height="500px">
+							<img src="./laboratorio02/parte2/codigo_3x3_pepper/homogeneous_blur.jpg" alt="Blur 11x11" width="600px" height="500px">
 							<p class="caption">Blur 3x3 - Ruído Sal e Pimenta</p>
 						</div>
 					
@@ -275,13 +298,21 @@
 					iii. Filtro aplicado na Webcam:</h4>
 					<p class="texto_padrao">
 						(Explicar o codigo usado e qual fio o melhor filtro que no caso [e o filtro blur 3x3)					</p>
-	    				<br><img src="./laboratorio02/parte3/foto_sem_filtro.png" class="center" >
-	    				<figcaption>Foto sem filtro</figcaption>
-					</figure>
-					<br><img src="./laboratorio02/parte3/median_blur_3x3.png" class="center" >
-	    				<figcaption>Foto com filtro blur 3x3 </figcaption>
-					</figure>
-					<br>
+	    		
+						<div class="image-row">
+						<div class="image-container">
+							<img src="./laboratorio02/parte3/foto_sem_filtro.png" alt="Bilateral 3x3" width="600px" height="500px">
+							<p class="caption">Foto sem filtro</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./laboratorio02/parte3/median_blur_3x3.png" alt="Blur 3x3" width="600px" height="500px">
+							<p class="caption">Foto com blur 3x3</p>
+						</div>
+					
+	
+					</div>
+					
 		
 			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
 				<p class="texto_padrao">(Concluir aqui) </p>

@@ -130,13 +130,30 @@
   
   .texto_padrao {
     text-align: left;
-    margin-top: 15px;
+    margin-top: 5px;
     margin-left: 20px; /* Adjust the value as needed */
     margin-right: 25px; /* Adjust the value as needed */
     font-family: Montserrat;
     font-size: 18px;
     position: relative;
     text-align: justify;
+    margin-bottom: 5px;
+}
+
+
+.texto_padrao1 {
+    text-align: left;
+    margin-left: 20px; /* Adjust the value as needed */
+    margin-right: 25px; /* Adjust the value as needed */
+    font-family: Montserrat;
+    font-size: 18px;
+    position: relative;
+    text-align: justify;
+    margin-bottom: 5px;
+}
+
+.bold-letter {
+    font-weight: bold;
 }
 
  
@@ -145,6 +162,10 @@
         margin-left: 20px;
       }
     
+      .texto_padrao1::first-letter {
+        position: absolute;
+        margin-left: 20px;
+      }
 ul {
   list-style-type: disc;
 }
@@ -158,6 +179,7 @@ ul {
      margin-top: 15px;
     margin-left: 20px; /* Adjust the value as needed */
     margin-right: 25px;
+    margin-bottom: 5px;
     
       }     
       
@@ -168,9 +190,8 @@ ul {
      font-family: Montserrat;
     font-weight: bold;
      font-size: 22px;
-     margin-top: 15px;
      margin-left: 20px; /* Adjust the value as needed */
-
+    margin-bottom: 5x;
     
       }     
     
@@ -184,7 +205,19 @@ ul {
      margin-left: 20px; /* Adjust the value as needed */
      margin-bottom: 20px;
  
-      }     
+      }   
+      
+      .subtitulo_lab4 {
+        text-align: left;
+        margin-top: 25px;
+        font-family: Montserrat;
+       font-weight: bold;
+        font-size: 18px;
+        margin-bottom: 5px;
+        margin-left: 20px; /* Adjust the value as needed */
+    
+    
+         }   
 
       .home-button {
         background-color: green;
