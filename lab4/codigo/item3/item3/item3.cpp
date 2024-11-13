@@ -15,10 +15,11 @@ using namespace cv;
  * @function main
  */
  
- int threshold_value = 0;
+ int threshold_value1 = 0;
+ int threshold_value2 = 0;
  int const max_value = 255;
  int const max_binary_value = 255;
- Mat gray, dst;
+ Mat gray, dst1, dst2, equalized;
  
  static void Threshold_Demo_gray( int, void* )
 {
@@ -28,9 +29,8 @@ using namespace cv;
      3: Threshold to Zero
      4: Threshold to Zero Inverted
     */
-    threshold( gray, dst, threshold_value, max_binary_value, 0 );
-    //imshow( window_name, dst );
-    //imshow("Image2", dst);
+    threshold( gray, dst1, threshold_value1, max_binary_value, 0 );
+    threshold( equalized, dst2, threshold_value2, max_binary_value, 0 );
 }
 
 int main()
@@ -45,8 +45,11 @@ int main()
     }
     //! [Open webcam]
 
-	namedWindow( "Image2", WINDOW_AUTOSIZE );
-        createTrackbar("Barra_Threshold", "Image2", &threshold_value, max_value, Threshold_Demo_gray);
+	namedWindow( "Limiarizacao_sem_equalizacao", WINDOW_AUTOSIZE );
+        createTrackbar("Barra_Threshold1", "Limiarizacao_sem_equalizacao", &threshold_value1, max_value, Threshold_Demo_gray);
+        
+        namedWindow( "Limiarizacao_com_equalizacao", WINDOW_AUTOSIZE );
+        createTrackbar("Barra_Threshold2", "Limiarizacao_com_equalizacao", &threshold_value2, max_value, Threshold_Demo_gray);
     while (true)
     {
         Mat frame;
@@ -63,8 +66,7 @@ int main()
         //! [Convert to grayscale]
         //Mat gray;
         cvtColor(frame, gray, COLOR_BGR2GRAY);
-        //Mat gray2 = gray.clone();
-        threshold( gray, dst, threshold_value, max_binary_value, 0 );
+        threshold( gray, dst1, threshold_value1, max_binary_value, 0 );
         //! [Convert to grayscale]
 
         //! [Compute histogram of grayscale image]
@@ -80,6 +82,7 @@ int main()
         Mat histImage(hist_h, hist_w, CV_8UC3, Scalar(0, 0, 0));
 
         normalize(gray_hist, gray_hist, 0, histImage.rows, NORM_MINMAX);
+        
 
         for (int i = 1; i < histSize; i++)
         {
@@ -90,7 +93,7 @@ int main()
         //! [Draw histogram for grayscale image]
 
         //! [Apply Histogram Equalization]
-        Mat equalized;
+        //Mat equalized;
         equalizeHist(gray, equalized);
         //! [Apply Histogram Equalization]
 
@@ -109,14 +112,16 @@ int main()
                  Scalar(255, 0, 0), 2, 8, 0);
         }
         //! [Draw histogram for equalized image]
+        
+        threshold( equalized, dst2, threshold_value2, max_binary_value, 0 );
 
         //! [Display results]
         imshow("Grayscale Image", gray);
         //imshow("Grayscale Histogram", histImage);
-        //imshow("Equalized Image", equalized);
+        imshow("Equalized Image", equalized);
         //imshow("Equalized Histogram", equalizedHistImage);
-        imshow("Image2", dst);
-             
+        imshow("Limiarizacao_sem_equalizacao", dst1);
+        imshow("Limiarizacao_com_equalizacao", dst2);         
 
         //! [Save images on key press]
         char key = (char)waitKey(30); // Wait 30 ms for a key press
@@ -124,8 +129,10 @@ int main()
         {
             imwrite("Grayscale_Image.png", gray);
             imwrite("Equalized_Image.png", equalized);
-            imwrite("Grayscale_Histogram.png", histImage);
-            imwrite("Equalized_Histogram.png", equalizedHistImage);
+            //imwrite("Grayscale_Histogram.png", histImage);
+            //imwrite("Equalized_Histogram.png", equalizedHistImage);
+            imwrite("Img_Sem_Equalizacao_Limiarizada.png", dst1);
+            imwrite("Img_Com_Equalizacao_Limiarizada.png", dst2);
             cout << "Images saved successfully.\n";
         }
         else if (key == 27) // Press 'Esc' to exit
@@ -139,4 +146,3 @@ int main()
     destroyAllWindows();
     return 0;
 }
-
