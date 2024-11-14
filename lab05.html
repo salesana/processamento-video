@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório 05 - Subtração de Fundo e Detecção de Movimento</title>
+    <link rel="icon" type="image/png" href="images/ufpng.png">
+    <link rel="stylesheet" href="estilos/LAB.css">
+    <link rel="stylesheet" href="estilos/reset.css">
+      <a href="relatorios.html" class="home-button">Retornar à aba Relatórios</a>
+        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo UFABC"></img>
+</head>
+<body>
+    <section class="lab">
+        <h2 class="titulo_lab">Laboratório 05 - Subtração de Fundo e Detecção de Movimento</h2>
+
+			<h3 class="intro">I. Introdução</h3>
+				<p class="texto_padrao">O laboratório realizado consistiu em uma experiência introdutória prática de captura, edição e processamento de imagens e vídeos, via aplicações desenvolvidas com linguagem C++ e compilação através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
+
+			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
+			
+				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
+
+		
+				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
+		
+					<p class="texto_padrao"></p>
+
+
+    
+			<h3 class="subtitulo_lab"> III. Materiais e Métodos </h3>
+
+				<h4 class="subtitulo_lab"> III. a) Materiais </h4>
+					<li class="texto_padrao">Webcam - Microsoft LifeCam VX800 </li>
+					<li class="texto_padrao">Software OpenCV </li>
+					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
+
+				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
+					<p class="texto_padrao">Utilizando uma instância do Ubuntu versão 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
+						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
+						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
+						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
+						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
+						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. </p>
+
+
+					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
+					<p class="texto_padrao">						
+						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
+         
+					<p class="texto_padrao">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
+					</p>
+
+					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
+					<p class="texto_padrao"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
+			
+		
+			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
+			<p class="texto_padrao"> Com as imagens processadas, foi possível analisar os efeitos visuais de cada filtro e o impacto dos diferentes tamanhos de kernel na suavização e preservação dos detalhes.
+				As imagens salvas permitiram uma comparação direta entre os efeitos dos diferentes filtros e tamanhos de kernel, proporcionando uma visão clara dos resultados para futuras análises.</p>				
+
+
+			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
+				<p class="texto_padrao">(Concluir aqui) </p>
+			
+			<h3 class="subtitulo_lab">VI. Referências</h3>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html">Using OpenCV with gcc and Cmake</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">Getting Started with Images</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">Reading and Writing Videos using OpenCV</a>
+				</p>
+	    			<p class="texto_padrao"> <a href="https://stackoverflow.com/questions/30103077/what-is-the-codec-for-mp4-videos-in-python-opencv">what is the codec for mp4 videos in python OpenCV</a>
+				</p>
+
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html">
+					How to Use Background Subtraction Methods
+				</p>
+
+				
+				<p class="texto_padrao"> <a href="https://github.com/opencv/opencv/blob/4.x/samples/cpp/tutorial_code/video/bg_sub.cpp">
+					Background subtraction tutorial sample code				</p>
+
+					<p class="texto_padrao"> <a href="https://github.com/opencv/opencv/blob/4.x/samples/data/vtest.avi">
+						Test Video AVI Format			</p>
+
+
+</body>
+</html>

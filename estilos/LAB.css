@@ -141,6 +141,10 @@
 }
 
 
+.video-container {
+    text-align: center;
+    font-family: Arial, sans-serif;
+}
 .texto_padrao1 {
     text-align: left;
     margin-left: 20px; /* Adjust the value as needed */
@@ -203,7 +207,7 @@ ul {
      font-size: 20px;
      margin-top: 15px;
      margin-left: 20px; /* Adjust the value as needed */
-     margin-bottom: 20px;
+     margin-bottom: 10px;
  
       }   
       
