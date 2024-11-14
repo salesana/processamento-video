@@ -1,0 +1,3 @@
+/home/ufabc/Documentos/chnunes/lab4/item4/CMakeFiles/item4.dir
+/home/ufabc/Documentos/chnunes/lab4/item4/CMakeFiles/edit_cache.dir
+/home/ufabc/Documentos/chnunes/lab4/item4/CMakeFiles/rebuild_cache.dir
