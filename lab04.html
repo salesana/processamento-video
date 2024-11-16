@@ -213,19 +213,19 @@
 						</div>
 					</div>
 			
-	    		<h4 class="subtitulo_lab4">- Item 3: </h4>
-	    		<p class="texto_padrao"> (3) Estudo da binarização. Desenvolva outro programa modificando o item (2), incluindo a limiarização da imagem do tutorial acima, para obtenção de uma imagem binária. Adicione a Equalização de Histograma antes da limiarização.  Realize este experimento com pessoas e com objetos. Compare e analise o efeito sem e com a equalização de histograma no resultado da imagem binária.</p>
+	    		<h4 class="subtitulo_lab4">- Item 3: Estudo da binarização </h4>
+	    		<p class="texto_padrao">Desenvolva outro programa modificando o item (2), incluindo a limiarização da imagem do tutorial acima, para obtenção de uma imagem binária. Adicione a Equalização de Histograma antes da limiarização.  Realize este experimento com pessoas e com objetos. Compare e analise o efeito sem e com a equalização de histograma no resultado da imagem binária.</p>
 
 	    				<p class="subtitulo_lab4"> Caio(Limiarizacao 110):</p>
 					<div class="image-row">
 						
 						<div class="image-container">
-							<img src="./lab4/codigo/item2/Grayscale_Image_caio.png" alt="Foto Cinza Original" width="600px" height="500px">
+							<img src="lab4/codigo/item3/item3/imagens_item3/caio_cinza.png" alt="Foto Cinza Original" width="600px" height="500px">
 							<p class="caption">Foto Cinza Original </p>
 						</div>
 					
 						<div class="image-container">
-							<img src="./lab4/codigo/item2/Equalized_Image_caio.png" alt="Imagem Caio Equalizada" width="600px" height="500px">
+							<img src="lab4/codigo/item3/item3/imagens_item3/caio_Equalizado.png" alt="Imagem Caio Equalizada" width="600px" height="500px">
 							<p class="caption">Imagem Caio Equalizada </p>
 						</div>
 						
@@ -239,6 +239,21 @@
 							<p class="caption">Caio Limiarização 110 com equalização </p>
 						</div>
 					</div>
+					
+					<p class="texto_padrao">
+					A limiariação de uma imagem é um processo que determina se certo pixel de uma imagem tem sua intensidade acima ou abaixo de um limite pré-determinado.
+					Dependendo do tipo de limiariação utilizado, este pixel poderá ser determinado como válido e, portanto, terá sua intensidade alterada para o máximo, tornando-o, nos casos
+					de imagens preto e branco, em um pixel branco. Caso o pixel seja, no entanto, inválido, o contrário acontecerá e ele terá sua intensidade anulada, tornando-se, assim,
+					um pixel totalmente preto. <br>
+					Esta técnica é amplamente utilizada para segmentação de imagens, principalmente, para separação de objetos que se deseja analisar, em especial, objetos que estejam em primeiro plano,
+					destacando-os do fundo da imagem. <br>
+					Para as imagens acima, foi utilizada a limiarização binária, com limite equivalente a 110 unidades para o rosto e 200 para o objeto. Para este tipo, os pixels que apresentaram intensidade superior ao limite aplicado, tornaram-se brancos,
+					já os demais, pretos. É possível notar que, após a limiarização, grande parte do rosto do integrante foi destacada. Já para o objeto, seus detalhes, como título e artes do livro foram destacados. No entanto, para 
+					ambos sujeitos capturados, nota-se que, devido a baixa qualidade da câmera e iluminação do laboratório, não foi possível destacar, apenas o primeiro plano da imagem, já que grande parte 
+					do fundo também foi destacado, principalmente para as imagens de rosto. <br>
+					Analisando a limiarização aplicada para as imagens previamente equalizadas, nota-se que, este procedimento, teve pouco impacto nas regiões destacadas. Em contrapartida,
+					claramente nota-se que as bordas dos objetos presentes nas imagens estão mais bem definidas, trazendo assim maiores detalhes e distinções sobre o que está em primeiro e segundo plano.
+					</p>
 
 	    				<p class="subtitulo_lab4"> Objeto (Limiarizacao 110):</p>
 					<div class="image-row">
