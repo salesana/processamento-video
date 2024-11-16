@@ -458,7 +458,15 @@ Experimentar com valores de limiar (threshold) para realizar uma segmentação e
 	    				
 				<p class="subtitulo_lab3">(Parte 3 ):</p>
 	    			<p class="texto_padrao">
-					(Explicar essa bomba que o caio fez, COMO QUE FUNCIONA ESSA MAGIA, vou tacar as fotos ai e fé , vou pegar só do HSV pq é o que pede no lab 3, depois a gente ve se precisa de mais )				</p>
+					O programa apresentado a seguir, ao ser executado, abrirá uma série de imagens. Ao apertar a tecla 'N', o programa avançará para a próxima
+					imagem e, ao teclar 'P', o programa retornará a imagem anterior.<br>
+					Além disso, a tela que apresenta a imagem é interativa. A direita da imagem, é apresentado os valores de de cada componente de diferentes
+					espectros de cores de onde o cursor está acima. Ao clicar, estes valores são salvos e, em seguida, é aplicado um intervalo de 80 unidades ao
+					entorno do valor e extraído todos os pixels que apresentam valores dentro deste intervalo. Atualmente, isso apenas é feito na codificação HSV, mas pode
+					ser aplicado facilmente às demais codificações. <br>
+					Por fim, os pixels extraídos são copiados para uma nova imagem que é, então, salva. Além disto, para se extrair mais de uma cor, será necessário clicar 
+					sobre dois pontos da imagem, com a cor desejada e salvar os pixels e, por fim, somá-los a uma nova matriz de imagem e salvá-la.
+					</p>
 				<div class="image-row">
 					<div class="image-container">
 						<img src="./lab03/Parte3_Lab3/Programa_ExtrairCor/images/rub00.jpg" alt="Median 11x11" width="600px" height="500px">
@@ -504,8 +512,9 @@ Experimentar com valores de limiar (threshold) para realizar uma segmentação e
 
 	    
 			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
-				<p class="texto_padrao">(Concluir aqui) </p>
-			
+				<p class="texto_padrao">A partir destes experimentos e programas criados, foi possível conferir, melhor, o funcionamento da codificação de cores
+					e sua extração, bem como, códigos de detecção de bordas e aplicação de filtros para pré-processamento. Além disto, para a maioria dos programas criados, foi verificado
+					a possibilidade de aplicação em "tempo real" com a utilização da webcam para captura das imagens.</p>
 			<h3 class="subtitulo_lab">VI. Referências</h3>
 				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html">Using OpenCV with gcc and Cmake</a>
 				</p>
