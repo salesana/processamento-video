@@ -29,6 +29,16 @@ double cosine_similarity(const vector<double>& v1, const vector<double>& v2) {
     return dot_product / (sqrt(norm_v1) * sqrt(norm_v2));
 }
 
+// Normalize a feature vector
+void normalize_vector(vector<double>& vec) {
+    double max_val = *max_element(vec.begin(), vec.end());
+    if (max_val > 0) {
+        for (auto& val : vec) {
+            val /= max_val;
+        }
+    }
+}
+
 int main() {
     VideoCapture cap(0);
     if (!cap.isOpened()) {
@@ -71,6 +81,7 @@ int main() {
         vector<double> row(100 * 100); // Only features, no labels
         file.read(reinterpret_cast<char*>(row.data()), row.size() * sizeof(double));
         if (file.gcount() > 0) {
+            normalize_vector(row); // Normalize dataset vectors
             face_data.push_back(row);
         }
     }
@@ -119,13 +130,17 @@ int main() {
                 }
             }
 
+            // Normalize the feature vector
+            normalize_vector(face_vector);
+
+            // Debug: Check the face vector values
+            cout << "Face vector sample: " << face_vector[0] << ", " << face_vector[1] << ", ..." << endl;
+
             // Find the maximum cosine similarity with the dataset
             double max_similarity = 0.0;
             for (const auto& sample : face_data) {
                 double similarity = cosine_similarity(face_vector, sample);
-                if (similarity > max_similarity) {
-                    max_similarity = similarity;
-                }
+                max_similarity = max(max_similarity, similarity);
             }
 
             // Check against threshold and display result
