@@ -144,7 +144,7 @@ int main() {
             Mat face_section = gray(roi);
             resize(face_section, face_section, Size(100, 100));
 
-            // Flatten face_section
+            ///  Flatten face_section
             vector<double> face_vector;
             face_vector.reserve(100 * 100);
             for (int i = 0; i < face_section.rows; ++i) {
