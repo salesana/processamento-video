@@ -39,26 +39,6 @@ void normalize_vector(vector<double>& vec) {
     }
 }
 
-// Validate the dataset vectors
-void validate_dataset(const vector<vector<double>>& dataset) {
-    if (dataset.empty()) {
-        cerr << "Error: Dataset is empty!" << endl;
-        exit(-1);
-    }
-
-    for (size_t i = 0; i < dataset.size(); ++i) {
-        const auto& vec = dataset[i];
-        double sum = accumulate(vec.begin(), vec.end(), 0.0);
-
-        if (sum == 0.0) {
-            cerr << "Error: Dataset vector at index " << i << " is all zeros!" << endl;
-            exit(-1);
-        }
-    }
-
-    cout << "Dataset validation successful: All vectors are non-zero." << endl;
-}
-
 int main() {
     VideoCapture cap(0);
     if (!cap.isOpened()) {
@@ -107,9 +87,6 @@ int main() {
     }
     file.close();
 
-    // Validate dataset vectors
-    validate_dataset(face_data);
-
     cout << "Loaded " << face_data.size() << " samples for " << person_name << "." << endl;
 
     const double COSINE_SIMILARITY_THRESHOLD = 0.8; // Threshold for validation
@@ -144,7 +121,7 @@ int main() {
             Mat face_section = gray(roi);
             resize(face_section, face_section, Size(100, 100));
 
-            ///  Flatten face_section
+            // Flatten face_section
             vector<double> face_vector;
             face_vector.reserve(100 * 100);
             for (int i = 0; i < face_section.rows; ++i) {
@@ -157,7 +134,7 @@ int main() {
             normalize_vector(face_vector);
 
             // Debug: Check the face vector values
-            cout << "Captured face vector sample: " << face_vector[0] << ", " << face_vector[1] << ", ..." << endl;
+            cout << "Face vector sample: " << face_vector[0] << ", " << face_vector[1] << ", ..." << endl;
 
             // Find the maximum cosine similarity with the dataset
             double max_similarity = 0.0;
