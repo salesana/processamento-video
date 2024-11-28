@@ -22,94 +22,10 @@ double distance(const vector<double>& v1, const vector<double>& v2) {
     return sqrt(sum);
 }
 
-// Normalize feature vector
-void normalize(vector<double>& vec) {
-    double max_val = *max_element(vec.begin(), vec.end());
-    if (max_val > 0) {
-        for (auto& val : vec) {
-            val /= max_val;
-        }
-    }
-}
-
-// KNN function with distance output
-pair<int, double> knn(const vector<vector<double>>& train, const vector<double>& test, int k = 5) {
-    vector<pair<double, int>> dist;
-
-    for (const auto& row : train) {
-        vector<double> feature_vector(row.begin(), row.end() - 1);
-        int label = static_cast<int>(row.back());
-        double d = distance(feature_vector, test);
-        dist.push_back({d, label});
-    }
-
-    // Sort based on distance
-    sort(dist.begin(), dist.end(), [](const pair<double, int>& a, const pair<double, int>& b) {
-        return a.first < b.first;
-    });
-
-    // Select top k
-    vector<int> labels;
-    for (int i = 0; i < k; ++i) {
-        labels.push_back(dist[i].second);
-    }
-
-    // Determine the most frequent label
-    map<int, int> freq;
-    for (int label : labels) {
-        freq[label]++;
-    }
-
-    int max_count = 0, best_label = -1;
-    for (const auto& [label, count] : freq) {
-        if (count > max_count) {
-            max_count = count;
-            best_label = label;
-        }
-    }
-
-    // Return the best label and the smallest distance
-    return {best_label, dist[0].first};
-}
-
 int main() {
-    string dataset_path = "./face_dataset/";
-    const double MIN_DISTANCE_THRESHOLD = 1000.0; // Threshold for recognition
-    vector<vector<double>> face_data;
-    map<int, string> names;
-    int class_id = 0;
-
-    // Load dataset
-    for (const auto& entry : fs::directory_iterator(dataset_path)) {
-        if (entry.path().extension() == ".bin") {
-            names[class_id] = entry.path().stem().string();
-
-            // Load binary data
-            ifstream file(entry.path(), ios::binary);
-            if (!file.is_open()) {
-                cerr << "Error: Could not open file " << entry.path() << endl;
-                continue;
-            }
-
-            while (!file.eof()) {
-                vector<double> row(100 * 100 + 1); // Features + label
-                file.read(reinterpret_cast<char*>(row.data()), row.size() * sizeof(double));
-                if (file.gcount() > 0) {
-                    row.back() = class_id; // Assign current class_id to label
-                    face_data.push_back(row);
-                }
-            }
-            file.close();
-
-            class_id++;
-        }
-    }
-
-    cout << "Loaded " << face_data.size() << " face samples." << endl;
-
     VideoCapture cap(0);
     if (!cap.isOpened()) {
-        cerr << "Error: Could not open camera" << endl;
+        cerr << "Error: Could not open the camera" << endl;
         return -1;
     }
 
@@ -119,37 +35,72 @@ int main() {
         return -1;
     }
 
-    Mat frame, gray;
+    string dataset_path = "./face_dataset/";
+    if (!fs::exists(dataset_path)) {
+        cerr << "Error: Dataset path does not exist" << endl;
+        return -1;
+    }
 
-    cout << "Press 's' to capture a frame and recognize the face, or 'q' to quit." << endl;
+    // Get the user's name
+    cout << "Enter the name of the person to recognize: ";
+    string person_name;
+    cin >> person_name;
 
+    string dataset_file = dataset_path + person_name + ".bin";
+    if (!fs::exists(dataset_file)) {
+        cout << "Error: The name '" << person_name << "' is not in the dataset." << endl;
+        return -1;
+    }
+
+    // Load dataset for the specified user
+    vector<vector<double>> face_data;
+    ifstream file(dataset_file, ios::binary);
+    if (!file.is_open()) {
+        cerr << "Error: Could not open dataset file for " << person_name << endl;
+        return -1;
+    }
+
+    while (!file.eof()) {
+        vector<double> row(100 * 100); // Only features, no labels
+        file.read(reinterpret_cast<char*>(row.data()), row.size() * sizeof(double));
+        if (file.gcount() > 0) {
+            face_data.push_back(row);
+        }
+    }
+    file.close();
+
+    cout << "Loaded " << face_data.size() << " samples for " << person_name << "." << endl;
+
+    const double MIN_DISTANCE_THRESHOLD = 1000.0; // Threshold for validation
+
+    // Main loop
     while (true) {
+        Mat frame;
         cap >> frame;
         if (frame.empty()) {
             cerr << "Error: Could not capture frame" << endl;
             continue;
         }
 
-        imshow("Live Feed", frame);
+        Mat gray;
+        cvtColor(frame, gray, COLOR_BGR2GRAY);
 
-        int key = waitKey(1);
+        // Detect faces
+        vector<Rect> faces;
+        face_cascade.detectMultiScale(gray, faces, 1.3, 5);
 
-        if (key == 's') {
-            // Convert to grayscale
-            cvtColor(frame, gray, COLOR_BGR2GRAY);
+        for (const auto& face : faces) {
+            int x = face.x, y = face.y, w = face.width, h = face.height;
 
-            // Detect face
-            vector<Rect> faces;
-            face_cascade.detectMultiScale(gray, faces, 1.3, 5);
-
-            if (faces.empty()) {
-                cout << "No face detected in the frame." << endl;
-                continue;
-            }
-
-            // Use the first detected face for recognition
-            Rect face = faces[0];
-            Mat face_section = gray(face);
+            // Extract face ROI
+            int offset = 5;
+            Rect roi(
+                max(0, x - offset),
+                max(0, y - offset),
+                min(frame.cols - x, w + 2 * offset),
+                min(frame.rows - y, h + 2 * offset)
+            );
+            Mat face_section = gray(roi);
             resize(face_section, face_section, Size(100, 100));
 
             // Flatten face_section
@@ -161,25 +112,30 @@ int main() {
                 }
             }
 
-            // Normalize the feature vector
-            normalize(face_vector);
-
-            // Predict using KNN
-            auto [predicted_label, dist] = knn(face_data, face_vector);
-
-            if (dist > MIN_DISTANCE_THRESHOLD) {
-                cout << "Not recognized (distance: " << dist << ")" << endl;
-            } else {
-                string name = names[predicted_label];
-                cout << "Predicted name: " << name << " (distance: " << dist << ")" << endl;
+            // Find the closest sample in the dataset
+            double min_distance = DBL_MAX;
+            for (const auto& sample : face_data) {
+                double dist = distance(face_vector, sample);
+                if (dist < min_distance) {
+                    min_distance = dist;
+                }
             }
 
-            // Save the captured frame for reference
-            imwrite("saved_frame.jpg", frame);
-            cout << "Frame saved as 'saved_frame.jpg'" << endl;
+            // Check against threshold and display result
+            if (min_distance <= MIN_DISTANCE_THRESHOLD) {
+                rectangle(frame, face, Scalar(0, 255, 0), 2);
+                putText(frame, person_name + " Validado", Point(x, y - 10), FONT_HERSHEY_SIMPLEX, 0.7, Scalar(0, 255, 0), 2);
+                cout << "Recognized " << person_name << " with distance: " << min_distance << endl;
+            } else {
+                rectangle(frame, face, Scalar(0, 0, 255), 2);
+                putText(frame, "Not Recognized", Point(x, y - 10), FONT_HERSHEY_SIMPLEX, 0.7, Scalar(0, 0, 255), 2);
+                cout << "Not Recognized (distance: " << min_distance << ")" << endl;
+            }
         }
 
-        if (key == 'q') break;
+        imshow("Face Recognition", frame);
+
+        if (waitKey(1) == 'q') break;
     }
 
     cap.release();
