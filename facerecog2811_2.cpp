@@ -74,9 +74,7 @@ pair<int, double> knn(const vector<vector<double>>& train, const vector<double>&
 
 int main() {
     string dataset_path = "./face_dataset/";
-    string saved_frame_path = "saved_frame.jpg"; // Path to the saved frame
     const double MIN_DISTANCE_THRESHOLD = 1000.0; // Threshold for recognition
-
     vector<vector<double>> face_data;
     map<int, string> names;
     int class_id = 0;
@@ -109,10 +107,9 @@ int main() {
 
     cout << "Loaded " << face_data.size() << " face samples." << endl;
 
-    // Load the saved frame
-    Mat saved_frame = imread(saved_frame_path);
-    if (saved_frame.empty()) {
-        cerr << "Error: Could not load saved frame from " << saved_frame_path << endl;
+    VideoCapture cap(0);
+    if (!cap.isOpened()) {
+        cerr << "Error: Could not open camera" << endl;
         return -1;
     }
 
@@ -122,44 +119,71 @@ int main() {
         return -1;
     }
 
-    Mat gray;
-    cvtColor(saved_frame, gray, COLOR_BGR2GRAY);
+    Mat frame, gray;
 
-    // Detect face
-    vector<Rect> faces;
-    face_cascade.detectMultiScale(gray, faces, 1.3, 5);
+    cout << "Press 's' to capture a frame and recognize the face, or 'q' to quit." << endl;
 
-    if (faces.empty()) {
-        cout << "No face detected in the saved frame." << endl;
-        return 0;
-    }
-
-    // Use the first detected face for recognition
-    Rect face = faces[0];
-    Mat face_section = saved_frame(face);
-    resize(face_section, face_section, Size(100, 100));
-
-    // Flatten face_section
-    vector<double> face_vector;
-    face_vector.reserve(100 * 100);
-    for (int i = 0; i < face_section.rows; ++i) {
-        for (int j = 0; j < face_section.cols; ++j) {
-            face_vector.push_back(static_cast<double>(face_section.at<uchar>(i, j)));
+    while (true) {
+        cap >> frame;
+        if (frame.empty()) {
+            cerr << "Error: Could not capture frame" << endl;
+            continue;
         }
+
+        imshow("Live Feed", frame);
+
+        int key = waitKey(1);
+
+        if (key == 's') {
+            // Convert to grayscale
+            cvtColor(frame, gray, COLOR_BGR2GRAY);
+
+            // Detect face
+            vector<Rect> faces;
+            face_cascade.detectMultiScale(gray, faces, 1.3, 5);
+
+            if (faces.empty()) {
+                cout << "No face detected in the frame." << endl;
+                continue;
+            }
+
+            // Use the first detected face for recognition
+            Rect face = faces[0];
+            Mat face_section = gray(face);
+            resize(face_section, face_section, Size(100, 100));
+
+            // Flatten face_section
+            vector<double> face_vector;
+            face_vector.reserve(100 * 100);
+            for (int i = 0; i < face_section.rows; ++i) {
+                for (int j = 0; j < face_section.cols; ++j) {
+                    face_vector.push_back(static_cast<double>(face_section.at<uchar>(i, j)));
+                }
+            }
+
+            // Normalize the feature vector
+            normalize(face_vector);
+
+            // Predict using KNN
+            auto [predicted_label, dist] = knn(face_data, face_vector);
+
+            if (dist > MIN_DISTANCE_THRESHOLD) {
+                cout << "Not recognized (distance: " << dist << ")" << endl;
+            } else {
+                string name = names[predicted_label];
+                cout << "Predicted name: " << name << " (distance: " << dist << ")" << endl;
+            }
+
+            // Save the captured frame for reference
+            imwrite("saved_frame.jpg", frame);
+            cout << "Frame saved as 'saved_frame.jpg'" << endl;
+        }
+
+        if (key == 'q') break;
     }
 
-    // Normalize the feature vector
-    normalize(face_vector);
-
-    // Predict using KNN
-    auto [predicted_label, dist] = knn(face_data, face_vector);
-
-    if (dist > MIN_DISTANCE_THRESHOLD) {
-        cout << "Not recognized (distance: " << dist << ")" << endl;
-    } else {
-        string name = names[predicted_label];
-        cout << "Predicted name: " << name << " (distance: " << dist << ")" << endl;
-    }
+    cap.release();
+    destroyAllWindows();
 
     return 0;
 }
