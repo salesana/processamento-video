@@ -122,6 +122,8 @@ int main() {
 
     cout << "Loaded " << face_data.size() << " face samples." << endl;
 
+    Mat saved_frame;
+
     // Main loop
     while (true) {
         Mat frame;
@@ -152,30 +154,48 @@ int main() {
             Mat face_section = frame(roi);
             resize(face_section, face_section, Size(100, 100));
 
-            // Flatten face_section and prepare for KNN
-            vector<double> face_vector;
-            face_vector.reserve(100 * 100);
-            for (int i = 0; i < face_section.rows; ++i) {
-                for (int j = 0; j < face_section.cols; ++j) {
-                    face_vector.push_back(static_cast<double>(face_section.at<uchar>(i, j)));
-                }
-            }
-
-            // Normalize the feature vector
-            normalize(face_vector);
-
-            // Predict using KNN
-            int predicted_label = knn(face_data, face_vector);
-            string name = names[predicted_label];
-
-            // Draw bounding box and label
+            // Draw bounding box
             rectangle(frame, face, Scalar(255, 255, 255), 2);
-            putText(frame, name, Point(x, y - 10), FONT_HERSHEY_SIMPLEX, 1, Scalar(255, 0, 0), 2);
         }
 
         imshow("Faces", frame);
 
-        if (waitKey(1) == 'q') break;
+        int key = waitKey(1);
+
+        // If 's' is pressed, save the last frame and predict
+        if (key == 's') {
+            saved_frame = frame.clone();
+            if (!faces.empty()) {
+                Rect face = faces[0]; // Use the first detected face
+                Mat face_section = frame(face);
+                resize(face_section, face_section, Size(100, 100));
+
+                // Flatten face_section
+                vector<double> face_vector;
+                face_vector.reserve(100 * 100);
+                for (int i = 0; i < face_section.rows; ++i) {
+                    for (int j = 0; j < face_section.cols; ++j) {
+                        face_vector.push_back(static_cast<double>(face_section.at<uchar>(i, j)));
+                    }
+                }
+
+                // Normalize the feature vector
+                normalize(face_vector);
+
+                // Predict using KNN
+                int predicted_label = knn(face_data, face_vector);
+                string name = names[predicted_label];
+                cout << "Predicted name: " << name << endl;
+
+                // Save the frame to disk for reference
+                imwrite("saved_frame.jpg", saved_frame);
+                cout << "Saved frame as 'saved_frame.jpg'" << endl;
+            } else {
+                cout << "No face detected in the current frame." << endl;
+            }
+        }
+
+        if (key == 'q') break;
     }
 
     cap.release();
