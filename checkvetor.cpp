@@ -37,7 +37,7 @@ int main() {
             for (size_t i = 0; i < vec.size(); ++i) {
                 cout << fixed << setprecision(4) << vec[i]; // Print each value with 4 decimal places
                 if (i < vec.size() - 1) cout << ", ";
-                if (i % 10 == 9) cout << endl; // Break after every 10 elements for readability
+                if (i % 10 == 9) cout << endl; // BBreak after every 10 elements for readability
             }
             cout << "]" << endl;
         }
