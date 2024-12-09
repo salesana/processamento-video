@@ -16,15 +16,40 @@
         <h2 class="titulo_lab">Laboratório 04 - Histograma e Limiarização </h2>
 
 			<h3 class="intro">I. Introdução</h3>
-				<p class="texto_padrao">O laboratório realizado consistiu em uma experiência introdutória prática de captura, edição e processamento de imagens e vídeos, via aplicações desenvolvidas com linguagem C++ e compilação através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
-
-			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
+			<p class="texto_padrao">
+				O laboratório realizado consistiu em aplicação e analise de histograma em imagem e vídeo. Além da visualização gráfica desses histogramas temos manipulação deles por meio de limiarização e binarização.
 			
-				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
+			<p class="texto_padrao"><span class="bold-letter">
+			- Histograma de Imagem:
+			</span></p>
+			
+			<p class="texto_padrao">
+				Histograma é a representação gráfica de distribuição de intensidade de uma imagem onde o eixo X é a intensidade indo de 0 a 255, e o eixo Y temos os pixels.
 
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Limiarização:
+			</span></p>
+			
+			<p class="texto_padrao">
+				Processo que limita a intensidade do valor de um pixel, podendo alterar para seu valor máximo ou mínimo dependendo da aplicação.
+
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Equalização de imagem:
+
+			</span></p>
+			
+			<p class="texto_padrao">
+				Método que espalha os valores de intensidade ao longo do espectro, reduzindo a concentração de valores.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
 		
 				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
-		
+					
 					<p class="texto_padrao"></p>
 
 
@@ -37,23 +62,17 @@
 					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
 
 				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
-					<p class="texto_padrao">Utilizando uma instância do Ubuntu versão 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
-						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
-						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
-						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
-						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
-						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. </p>
-
 
 					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
-					<p class="texto_padrao">						
-						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
+					<p class="texto_padrao">Carregamos algumas imagens dos integrantes do grupo para obter vários histogramas a fim de analisar os efeitos de equalização e limiarizacao em diferentes cenarios. </p>
          
 					<p class="texto_padrao">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
 					</p>
-
-					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
-					<p class="texto_padrao"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
+					<h4 class="subtitulo_lab4">- Aplicação de filtro preto e branco: </h4>
+					<p class="texto_padrao"><span class="bold-letter">Ambos os filtros, equalização e limiarizacao foram utilizados em cima de um filtro preto e branco pois os canais de cores RGB são mostrados separadamente no histograma.</p>
+				
+					<h4 class="subtitulo_lab4">- A limiariação da imagem:</h4>
+					<p class="texto_padrao"><span class="bold-letter">Aplicando um limite (thresholding) pode-se definir o valor de intensidade de um pixel, como por exemplo: Após o valor do pixel ultrapassar o limite ele se torna máximo, ou torna todos os pixels em zero se diferentes do threshold, tornando a imagem binária.</p>
 			
 		
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
@@ -157,7 +176,8 @@
 							<p class="caption">Histograma Equalizada</p>
 						</div>
 					</div>
-	    			
+					<p class="texto_padrao"><span class="bold-letter"> Com o código <a href="https://github.com/salesana/processamento-video/blob/main/lab4/codigo/item1/Historigrama.cpp">aqui</a> foram analisadas as imagens dos integrantes do grupo tiradas anteriormente com diferentes cameras e ambientes. após processadas da pra perceber que as imagens equalizadas tem mais contrastes do que as originais </p>
+	    				</div>
 	    		<h4 class="subtitulo_lab4">- Item 2: </h4>
 			<p class="texto_padrao"> (2) Elabore outro programa modificando o código do item (1), agora fazendo a leitura de imagem da webcam. 
 			Neste caso, o programa deve adicionalmente mostrar uma janela ao vivo com a imagem cinza e o resultado da imagem equalizada.
@@ -212,6 +232,8 @@
 							<p class="caption">Histograma Equalizada</p>
 						</div>
 					</div>
+				<p class="texto_padrao"> Foi utilizado o código <a href="https://github.com/salesana/processamento-video/blob/main/lab4/codigo/item2/item2.cpp">aqui</a> para aplicar os mesmos filtros do item 1 na webcam. Diferente do item 1 a imagem equalizada não ficou tano distorcida comparado com a foto cinza original em ambos os casos, isso pode ser dado pelo fato do histograma original nesse caso já ser mais distribuído originalmente. Pode estar relacionado a luz ambiente ou qualidade da camera. </p>
+				</div>
 			
 	    		<h4 class="subtitulo_lab4">- Item 3: Estudo da binarização </h4>
 	    		<p class="texto_padrao">Desenvolva outro programa modificando o item (2), incluindo a limiarização da imagem do tutorial acima, para obtenção de uma imagem binária. Adicione a Equalização de Histograma antes da limiarização.  Realize este experimento com pessoas e com objetos. Compare e analise o efeito sem e com a equalização de histograma no resultado da imagem binária.</p>
