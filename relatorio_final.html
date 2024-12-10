@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratório 03 - Espaço de Cores</title>
+    <link rel="icon" type="image/png" href="images/ufpng.png">
+    <link rel="stylesheet" href="estilos/LAB.css">
+    <link rel="stylesheet" href="estilos/reset.css">
+      <a href="relatorios.html" class="home-button">Retornar à aba Relatórios</a>
+        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo UFABC"></img>
+</head>
+<body>
+    <section class="lab">
+        <h2 class="titulo_lab">Laboratório 03 - Espaço de Cores </h2>
+
+			<h3 class="intro">I. Introdução</h3>
+			<p class="texto_padrao">
+				O objetivo deste laboratório foi explorar técnicas de <b>processamento de imagens</b> utilizando a biblioteca OpenCV. Foram abordados conceitos fundamentais, como a conversão de espaços de cor, aplicação de filtros para pré-processamento, detecção de bordas e manipulação de vídeos e imagens em tempo real. A prática foi dividida em etapas que permitiram a compreensão e implementação de diferentes funcionalidades do OpenCV, com ênfase em detecção e análise de objetos coloridos.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Conversão de Espaço de Cor:
+			</span></p>
+			
+			<p class="texto_padrao">
+				A imagem capturada pela webcam foi convertida do espaço de cor RGB para HSV. O modelo HSV foi utilizado para facilitar a segmentação de cores específicas, permitindo a análise de objetos com base em suas tonalidades.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Aplicação do Filtro Canny:
+			</span></p>
+			
+			<p class="texto_padrao">
+				O detector de bordas Canny foi utilizado para identificar os contornos de objetos. Antes disso, aplicou-se um filtro gaussiano para reduzir o ruído presente nos frames capturados, garantindo uma detecção de bordas mais precisa.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Visualização em Tempo Real:
+			</span></p>
+			
+			<p class="texto_padrao">
+				Duas janelas foram criadas para exibição simultânea: uma para o vídeo original capturado pela webcam e outra para a saída processada pelo filtro Canny. Foi implementada uma barra deslizante para ajuste interativo dos limiares do filtro, permitindo a análise dinâmica dos resultados.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Salvamento de Frames:
+			</span></p>
+			
+			<p class="texto_padrao">
+				O programa permitiu salvar imagens dos frames capturados, tanto o original quanto o processado pelo filtro Canny. Os arquivos foram nomeados de forma única com base no timestamp, facilitando sua organização e identificação.
+			</p>
+			
+			<p class="texto_padrao"><span class="bold-letter">
+			- Gravação de Vídeos:
+			</span></p>
+			
+			<p class="texto_padrao">
+				A funcionalidade de gravação foi implementada para capturar vídeos do fluxo original e da saída processada pelo filtro Canny. Os vídeos foram salvos no formato AVI, utilizando uma taxa de 20 quadros por segundo, garantindo uma visualização clara do movimento dos objetos analisados.
+			</p>
+
+			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
+			
+				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
+
+		
+				<h4 class="subtitulo_lab2"> II. Objetivo </h4>
+		
+					<p class="texto_padrao">O laboratório tem como propósito proporcionar uma compreensão prática e teórica do processamento de imagens, com ênfase na segmentação por cores e detecção de bordas. Além disso, busca estimular a análise crítica dos resultados e a utilização de ferramentas avançadas para manipulação e extração de informações de imagens.</p>
+
+
+					<p class="texto_padrao"><span class="bold-letter"> - Entendimento de Espaços de Cor:</p>
+
+
+						<p class="texto_padrao">
+Compreender a conversão entre diferentes espaços de cor, como RGB, HSV, YCrCb e Bayer, além de suas aplicações práticas em detecção de objetos e segmentação de imagens.
+</p>
+
+<p class="texto_padrao"><span class="bold-letter">
+- Prática com Ferramentas de OpenCV:
+</span>
+
+<p class="texto_padrao">
+Estudar e implementar funções disponíveis no OpenCV para processamento de imagens, como cv2.inRange, conversão de espaços de cor, filtragem com filtros gaussianos e o detector de bordas Canny.
+</p>
+
+<p class="texto_padrao"><span class="bold-letter">- Segmentação e Detecção de Objetos Coloridos: </span>
+
+	<p class="texto_padrao">
+Aprender a identificar e segmentar objetos coloridos em diferentes espaços de cor e determinar faixas adequadas para detecção no espaço HSV. </p>
+<p class="texto_padrao">
+Experimentar com valores de limiar (threshold) para realizar uma segmentação eficiente.
+</p>
+
+<p class="texto_padrao"><span class="bold-letter">
+- Efeitos de Filtragem e Detecção de Bordas:
+</span>
+
+<p class="texto_padrao">Analisar como a filtragem de imagens, como o filtro gaussiano, pode melhorar a detecção de bordas e objetos em imagens ruidosas.</p>
+<p class="texto_padrao">Aplicar o detector de bordas Canny para detectar contornos dos objetos previamente segmentados.</p>
+
+<p class="texto_padrao"><span class="bold-letter">- Gravação e Salvar Resultados:</span>
+
+	<p class="texto_padrao">Integrar funcionalidades para salvar imagens e vídeos que capturem o rastreamento de objetos coloridos em movimento, promovendo um registro claro do comportamento dos objetos detectados. </p>
+
+	<p class="texto_padrao"><span class="bold-letter">
+	- Extração Simultânea de Objetos Coloridos:
+	</span>
+
+	<p class="texto_padrao">
+		Desenvolver técnicas para encontrar e extrair múltiplos objetos coloridos na mesma imagem, destacando a aplicabilidade da segmentação por cores para cenários mais complexos.
+
+	</p>
+
+    
+			<h3 class="subtitulo_lab"> III. Materiais e Métodos </h3>
+
+				<h4 class="subtitulo_lab"> III. a) Materiais </h4>
+					<li class="texto_padrao">Webcam - Microsoft LifeCam VX800 </li>
+					<li class="texto_padrao">Software OpenCV </li>
+					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
+	    				<li class="texto_padrao">Objetos coloridos</li>
+
+
+				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
+				<p class="texto_padrao"><span class="bold-letter">
+					- Conversão de RGB para HSV:
+					</span></p>
+					
+					<p class="texto_padrao">
+						A imagem capturada pela webcam é convertida do espaço de cor RGB para o espaço HSV. O espaço HSV permite uma segmentação mais eficiente, já que separa a informação de cor (tonalidade) da intensidade (brilho), facilitando a detecção de objetos coloridos.
+					</p>
+					
+					<p class="texto_padrao"><span class="bold-letter">
+					- Uso da Função inRange:
+					</span></p>
+					
+					<p class="texto_padrao">
+						Utiliza-se a função inRange para criar máscaras binárias que segmentam áreas específicas da imagem com base em faixas de valores HSV predefinidos. Cada faixa corresponde a uma cor específica, como vermelho, azul ou verde.
+					</p>
+					
+					<p class="texto_padrao"><span class="bold-letter">
+					- Detecção de Objetos Coloridos:
+					</span></p>
+					
+					<p class="texto_padrao">
+						Com base nas máscaras criadas, são extraídas áreas da imagem que correspondem aos objetos das cores selecionadas. O procedimento é repetido para pelo menos três objetos coloridos, e as faixas HSV para cada cor são analisadas.
+					</p>
+					
+					<p class="texto_padrao"><span class="bold-letter">
+					- Aplicação de Filtro Gaussiano:
+					</span></p>
+					
+					<p class="texto_padrao">
+						Um filtro gaussiano é aplicado na imagem original antes da conversão para o espaço HSV, reduzindo o ruído e melhorando a precisão na segmentação. A comparação entre imagens filtradas e não filtradas ajuda a compreender o impacto do filtro.
+					</p>
+					
+					<p class="texto_padrao"><span class="bold-letter">
+					- Detecção de Bordas com Canny:
+					</span></p>
+					
+					<p class="texto_padrao">
+						Após a segmentação, a imagem filtrada é submetida ao detector de bordas Canny para identificar contornos de objetos. Configurações de limiar são ajustadas para obter a melhor detecção de bordas para cada objeto colorido.
+					</p>
+					
+					<p class="texto_padrao"><span class="bold-letter">
+					- Salvar Imagens e Vídeos:
+					</span></p>
+					
+					<p class="texto_padrao">
+						O programa é modificado para incluir a funcionalidade de salvar imagens das janelas abertas e gravar vídeos que demonstrem o rastreamento dos objetos coloridos em movimento, utilizando as teclas [s], [k] e [h].
+					</p>
+					
+		
+			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
+	    		<h4 class="subtitulo_lab2">a) RGB para HSV:</h4>
+	
+					
+					<p class="texto_padrao">
+						A conversão do espaço de cor RGB para HSV é uma etapa fundamental no processamento de imagens quando se deseja segmentar ou analisar objetos coloridos. No espaço RGB, as cores são representadas como uma combinação de vermelho (Red), verde (Green) e azul (Blue), o que pode dificultar a separação de tonalidades específicas devido à mistura de intensidade e cor.
+					</p>
+					
+					<p class="texto_padrao">
+						O espaço HSV, que representa tonalidade (Hue), saturação (Saturation) e valor (Value), oferece uma abordagem mais intuitiva. A tonalidade corresponde à cor propriamente dita (como vermelho, azul ou verde), a saturação define a pureza da cor (intensidade), e o valor representa o brilho (luminosidade). Essa separação facilita a identificação de faixas de cor específicas.
+					</p>
+					
+					<p class="texto_padrao">
+						No experimento, a função <code>cv2.cvtColor()</code> do OpenCV é utilizada para converter a imagem capturada pela webcam de RGB para HSV. A partir dessa conversão, é possível definir faixas de tonalidade no espaço HSV que correspondem a diferentes cores de interesse, como vermelho, azul e verde, permitindo uma segmentação precisa dos objetos coloridos.
+					</p>
+
+					
+	    		<h4 class="subtitulo_lab3">Tabela com valores de HSV:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/pt1/Tabela_HSV.png" alt="Median 11x11" width="800px" height="500px">
+						<p class="caption">Tabela</p>
+					</div>
+					
+				</div>
+			<p class="subtitulo_lab3"> Tela imagem Vermelho:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./lab03/pt1/vemeisemfiltro.png" alt="Vermelho Original " width="600px" height="500px">
+							<p class="caption">Vermelho Original </p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/redsemfiltro.png" alt="Vermelho HSV" width="600px" height="500px">
+							<p class="caption">Vermelho HSV </p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/red2.png" alt="Vermelho Filtrada" width="600px" height="500px">
+							<p class="caption">Vermelho Filtrada</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./lab03/pt1/red.png" alt="Vermelho HSV Filtrada" width="600px" height="500px">
+							<p class="caption">Vermelho HSV Filtrada</p>
+						</div>
+					</div>
+	    
+	    		<p class="subtitulo_lab3"> Tela imagem verde:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./lab03/pt1/video_capture_2024_10_24_20_28_10.png" alt="Verde Original" width="600px" height="500px">
+							<p class="caption">Verde Original </p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/verdesemfiltro.png" alt="Verde HSV" width="600px" height="500px">
+							<p class="caption">Verde HSV</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/verde2.png" alt="Verde Filtrada" width="600px" height="500px">
+							<p class="caption">Verde Filtrada</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./lab03/pt1/verde.png" alt="Verde HSV Filtrada" width="600px" height="500px">
+							<p class="caption">Verde HSV Filtrada</p>
+						</div>
+					</div>
+	    
+	    		<p class="subtitulo_lab3"> Tela imagem Azul:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./lab03/pt1/azulnofilter.png" alt="Azul Original " width="600px" height="500px">
+							<p class="caption">Azul Original </p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/azulsemfiltro.png" alt="Azul HSV" width="600px" height="500px">
+							<p class="caption">Azul HSV </p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/pt1/blue2.png" alt="Azul Filtrada" width="600px" height="500px">
+							<p class="caption">Azul Filtrada</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./lab03/pt1/blue.png" alt="Azul HSV Filtrada" width="600px" height="500px">
+							<p class="caption">Azul HSV Filtrada</p>
+						</div>
+					</div>
+	    
+	    		<p class="subtitulo_lab3"> a.ii)  Filtro Canny:</p>
+
+	    		<p class="texto_padrao"> O programa disponibilizado <a href="https://github.com/salesana/processamento-video/blob/main/lab03/cannycomfiltro/canny.cpp">aqui</a> apresenta o código utilizado para a aplicação do filtro Canny nas imagens. Variou-se a intensidade do filtro afim de observar o seu comportamento.</p>	
+
+	    
+	    		<h4 class="subtitulo_lab3">Modificação para canny 0:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2b/canny_gaus_0_original.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2b/canny_gaus_0_filtrada.png" alt="Gaussian 11x11" width="600px" height="500px">
+						<p class="caption">Canny 0 filtrada</p>
+					</div>
+				</div>
+				
+			<h4 class="subtitulo_lab3">Modificação para canny 30:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2b/canny_30_original.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2b/canny_30_filtrada.png" width="600px" height="500px">
+						<p class="caption">Canny 30 filtrada</p>
+					</div>
+				</div>
+				
+			<h4 class="subtitulo_lab3">Modificação para canny 40:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2b/canny_40_original.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2b/canny_40_filtrada.png" width="600px" height="500px">
+						<p class="caption">Canny 40 filtrada</p>
+					</div>
+				</div>
+				
+			<h4 class="subtitulo_lab3">Modificação para canny 70:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2b/canny_gaus_70_original.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2b/canny_gaus_70_filtrada.png" alt="Gaussian 11x11" width="600px" height="500px">
+						<p class="caption">Canny 70 filtrada</p>
+					</div>
+				</div>
+				
+			<h4 class="subtitulo_lab3">Modificação para canny 100:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2b/cannu_gaus_100_original.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2b/canny_gaus_100_filtrada.png" alt="Gaussian 11x11" width="600px" height="500px">
+						<p class="caption">Canny 100 filtrada</p>
+					</div>
+				</div>
+	    		<h4 class="subtitulo_lab2">iii. Filtro aplicado na Webcam:</h4>
+	    
+					<p class="texto_padrao">
+						<p class="texto_padrao"> O programa disponibilizado <a href="https://github.com/salesana/processamento-video/blob/main/lab03/2c/canny.cpp">aqui</a> apresenta o código utilizado para a aplicação do filtro Canny nas imagens e nos vídeos. Variou-se a intensidade do filtro afim de observar o seu comportamento.</p>
+    					</p>
+
+						<p class="texto_padrao"><span class="bold-letter">
+							- Captura de Frames e Visualização:
+							</span></p>
+							
+							<p class="texto_padrao">
+								O programa utiliza a webcam para capturar frames em tempo real, exibindo simultaneamente a imagem original e a saída processada pelo filtro Canny em janelas separadas. Duas janelas são criadas: <code>Edge Map</code> para mostrar o resultado do filtro e <code>Original Frame</code> para exibir a imagem original.
+							</p>
+							
+							<p class="texto_padrao"><span class="bold-letter">
+							- Aplicação do Filtro Canny:
+							</span></p>
+							
+							<p class="texto_padrao">
+								O detector de bordas Canny é aplicado nos frames capturados. Antes disso, é utilizado um filtro gaussiano para reduzir o ruído na imagem. O algoritmo de Canny detecta bordas com base em limiares ajustáveis configurados por uma barra deslizante na interface. Os resultados são exibidos em tempo real na janela de saída.
+							</p>
+							
+							<p class="texto_padrao"><span class="bold-letter">
+							- Salvamento de Frames:
+							</span></p>
+							
+							<p class="texto_padrao">
+								Ao pressionar a tecla <code>s</code>, o programa salva os frames atuais (tanto o original quanto o processado pelo filtro Canny) como imagens em arquivos no formato PNG. Os arquivos gerados possuem nomes únicos baseados no timestamp atual, garantindo que os resultados sejam organizados e identificáveis.
+							</p>
+							
+							<p class="texto_padrao"><span class="bold-letter">
+							- Gravação de Vídeos:
+							</span></p>
+							
+							<p class="texto_padrao">
+								O programa permite gravar vídeos tanto do feed original quanto da saída processada pelo filtro Canny. A gravação é iniciada ao pressionar a tecla <code>k</code> e parada com a tecla <code>h</code>. Os vídeos são salvos no formato AVI, utilizando o codec MJPG e uma taxa de 20 quadros por segundo.
+							</p>
+							
+							<p class="texto_padrao"><span class="bold-letter">
+							- Interação com o Usuário:
+							</span></p>
+							
+							<p class="texto_padrao">
+								O programa oferece controle interativo por meio de teclas. O usuário pode ajustar os limiares do filtro Canny usando a barra deslizante, salvar frames pressionando <code>s</code>, iniciar ou parar gravações com <code>k</code> e <code>h</code>, respectivamente, e encerrar o programa pressionando <code>q</code> ou <code>ESC</code>.
+							</p>
+							
+	    		<h4 class="subtitulo_lab3">Filtro da camera com primeiro objeto:</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2c/fotocel1.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Celular</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2c/fotocannycel.png" width="600px" height="500px">
+						<p class="caption">Imagem Celular Filtrada</p>
+					</div>
+					<div class="video-container">
+						<p class="subtitulo_lab3">Videos: Original e Com filtro:</p>
+						<p class="texto_padrao">Video - Objeto: Celular</p>
+						
+						<div class="video-wrapper">
+							<video controls>
+								<source src="./lab03/2c/original_video_cel.mp4" type="video/mp4">
+								<p class="caption">Vídeo Original</p>		
+						
+							</video>
+							<video controls>
+								<source src="./lab03/2c/canny_video_cel.mp4" type="video/mp4">
+								<p class="caption">Vídeo com filtro canny aplicado</p>
+							</video>
+						</div>
+					</div>
+					
+				</div>
+	    		<h4 class="subtitulo_lab3">Filtro da camera com segundo objeto</h4>
+
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/2c/original_frame_2024_10_29_22_26_15.png" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Lilo Stitch</p>
+					</div>
+					
+					<div class="image-container">
+						<img src="./lab03/2c/canny_frame_2024_10_29_22_26_15.png" width="600px" height="500px">
+						<p class="caption">Imagem Lilo Stitch Filtrada</p>
+					</div>
+		
+					</div>
+	    	
+					<div class="video-container">
+						<p class="subtitulo_lab3">Videos Original e Com filtro:</p>
+						<p class="texto_padrao">Video - Objeto: Stitch</p>
+						
+						<div class="video-wrapper">
+							<video controls>
+								<source src="./lab03/2c/original_video.mp4" type="video/mp4">
+								<p class="caption">Vídeo Original</p>		
+						
+							</video>
+							<video controls>
+							<source src="./lab03/2c/canny_video.mp4" type="video/mp4">
+								<p class="caption">Vídeo com filtro canny aplicado</p>
+							</video>
+						</div>
+					</div>
+					
+				</div>
+
+					<br>
+	    				<br>
+	    
+	    				
+				<p class="subtitulo_lab3">Extração de cores de imagens de maneira interativa:</p>
+	    			<p class="texto_padrao">
+					O programa apresentado a seguir, ao ser executado, abrirá uma série de imagens. Ao apertar a tecla 'N', o programa avançará para a próxima
+					imagem e, ao teclar 'P', o programa retornará a imagem anterior.<br>
+					Além disso, a tela que apresenta a imagem é interativa. A direita da imagem, é apresentado os valores de de cada componente de diferentes
+					espectros de cores de onde o cursor está acima. Ao clicar, estes valores são salvos e, em seguida, é aplicado um intervalo de 80 unidades ao
+					entorno do valor e extraído todos os pixels que apresentam valores dentro deste intervalo. Atualmente, isso apenas é feito na codificação HSV, mas pode
+					ser aplicado facilmente às demais codificações. <br>
+					Por fim, os pixels extraídos são copiados para uma nova imagem que é, então, salva. Além disto, para se extrair mais de uma cor, será necessário clicar 
+					sobre dois pontos da imagem, com a cor desejada e salvar os pixels e, por fim, somá-los a uma nova matriz de imagem e salvá-la.
+					</p>
+				<div class="image-row">
+					<div class="image-container">
+						<img src="./lab03/Parte3_Lab3/Programa_ExtrairCor/images/rub00.jpg" alt="Median 11x11" width="600px" height="500px">
+						<p class="caption">Imagem Original</p>
+					</div>
+					
+				</div>
+					<p class="subtitulo_lab3">b.i)  Resultados da datecção de cor:</p>
+					<div class="image-row">
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_amarelo.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV amarelo</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_azul.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV azul</p>
+						</div>
+					
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_branco.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV branco</p>
+						</div>
+				
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_laranja.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV laranja</p>
+						</div>
+						
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_verde.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV verde</p>
+						</div>
+						<div class="image-container">
+							<img src="./lab03/Parte3_Lab3/imagens_resultado/HSV_vermelho.png" alt="Bilateral 11x11" width="600px" height="500px">
+							<p class="caption">HSV vermelho</p>
+						</div>
+					</div>
+	    
+	    
+	    
+				
+
+	    
+			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
+				<p class="texto_padrao">A partir destes experimentos e programas criados, foi possível conferir, melhor, o funcionamento da codificação de cores
+					e sua extração, bem como, códigos de detecção de bordas e aplicação de filtros para pré-processamento. Além disto, para a maioria dos programas criados, foi verificado
+					a possibilidade de aplicação em "tempo real" com a utilização da webcam para captura das imagens.</p>
+			<h3 class="subtitulo_lab">VI. Referências</h3>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/df5/tutorial_linux_gcc_cmake.html">Using OpenCV with gcc and Cmake</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/db/deb/tutorial_display_image.html">Getting Started with Images</a>
+				</p>
+				<p class="texto_padrao"> <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">Reading and Writing Videos using OpenCV</a>
+				</p>
+	    			<p class="texto_padrao"> <a href="https://stackoverflow.com/questions/30103077/what-is-the-codec-for-mp4-videos-in-python-opencv">what is the codec for mp4 videos in python OpenCV</a>
+				</p>
+
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/de/d25/imgproc_color_conversions.html">
+					Color conversions:		</p>
+
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/da/d97/tutorial_threshold_inRange.html">
+					Thresholding Operations using inRange	</p>
+
+				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/da/d5c/tutorial_canny_detector.html">
+						Canny Detector	</p>
+		
+</body>
+</html>
