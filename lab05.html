@@ -16,7 +16,7 @@
         <h2 class="titulo_lab">Laboratório 05 - Subtração de Fundo e Detecção de Movimento</h2>
 
 			<h3 class="intro">I. Introdução</h3>
-				<p class="texto_padrao">O laboratório realizado consistiu em uma experiência introdutória prática de captura, edição e processamento de imagens e vídeos, via aplicações desenvolvidas com linguagem C++ e compilação através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
+				<p class="texto_padrao"> O laboratório realizado consistiu em aplicação de tecnicas para subtracao do fundo e detecção de movimento da câmera através do software "OpenCV" instaciado em sistema operacional Ubuntu (Linux). </p>
 
 			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
 			
@@ -25,7 +25,7 @@
 		
 				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
 		
-					<p class="texto_padrao"></p>
+					<p class="texto_padrao"> Apicação de metodos de detecção de movimento usando aplicações OpenCV, no qual o modelo faz uma máscara com o primeiro plano e realiza a subtração do fundo, resultando numa imagem preto e branco com os objetos da cena.O modelo possui duas etapas: Criação do fundo e atualização. no primeiro passo o modelo computa do fundo da cena e após isso ele atualiza se adaptando as possiveis mudanças do ambiente. </p>
 
 
     
@@ -37,27 +37,14 @@
 					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
 
 				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
-					<p class="texto_padrao">Utilizando uma instância do Ubuntu versão 22.04.5 LTS - 64 bits, foi realizada a instalação do OpenCV. 
-						Após isso, seguindo os <a href="https://learnopencv.com/reading-and-writing-videos-using-opencv/">tutoriais</a> fornecidos via Moodle, 
-						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
-						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
-						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
-						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. </p>
+					<p class="texto_padrao">Apicando o código <a href="https://github.com/salesana/processamento-video/blob/main/lab05/pt11/bg_sub.cpp"> código </a> é possivel aplicar a remoção de fundo em um video pré renderizado, seguindo todos os passos para aplicação em OpenCV. </p>
 
 
-					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
-					<p class="texto_padrao">						
-						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
-         
-					<p class="texto_padrao">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
-					</p>
-
-					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
-					<p class="texto_padrao"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
-			
-		
+					<h4 class="subtitulo_lab4">- Preparação do vídeo: </h4>
+					<p class="texto_padrao">	Carregamos alguns videos não utilizados no lab01 e iremos testá-los com o codigo fornecidos pelo OpenCV. O procedimento experimental foi realizado em etapas, antes de testar o vídeo é nbecessario alterar o código do programa .cpp para ele ler o vídeo certo e foram testados vídeos com diferentes.					
+						</p>
+        
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
-			<p class="texto_padrao"> INTRODUZIR RESULTADOS AQUI.</p>
 				<h4 class="subtitulo_lab">a) Subtração de fundo</h4>
 				
 				<div class="video-container">
@@ -90,6 +77,8 @@
 								<source src="lab05/pt11/lab5_pt1/fg_mask_output.mp4" type="video/mp4">
 								<p class="caption">Vídeo com movimentos lentos - fundo subtraído</p>
 							</video>
+						</div>
+								    <p class="texto_padrao">	Em ambos os videos o código conseguiu detectar bem quais eram as pessoas em movimento. No primeiro vídeo ele também comsegui detectar as pessoas que estavam longe da cena principal e não aparecem aparecem muitos pontos brancos onde nao existem pessoas.Já no video 2 em alguns momentos há um flash detectando o teto, de alguma forma quando atualiza o background, possivelmente pela illuminação direta, é detectado como em movimento, porem são bem definidos os movimentos principalmente das mãos.	</p>
 						</div>
 						<h4 class="subtitulo_lab">b) Subtração de fundo a partir de WebCam</h4>
 				
@@ -124,7 +113,7 @@
 								<p class="caption">Vídeo com subtração de fundo - enquadramento distante</p>
 							</video>
 						</div>
-
+						<p class="texto_padrao"> Para a gravação com a webcam foi utilizado o código(aqui), e neste caso houve muito delay na execucao do programa, tazvem por ser muita coisa pra processar a webcam fica lenta, isso é notavel no primeiro video onde o trecho que é detectado tem 2 segundos e o com o processamento ficou com 7 segundos. A detecção funcionou melhor com baixa luz. </p>
 
 			<h3 class="subtitulo_lab">V. Conclusões e Comentários Finais</h3>
 				<p class="texto_padrao">(Concluir aqui) </p>
