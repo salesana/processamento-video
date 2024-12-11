@@ -13,106 +13,54 @@
 </head>
 <body>
     <section class="lab">
-        <h2 class="titulo_lab">Laboratório 03 - Espaço de Cores </h2>
+        <h2 class="titulo_lab">Relatório Final do Trabalho</h2>
 
 			<h3 class="intro">I. Introdução</h3>
 			<p class="texto_padrao">
-				O objetivo deste laboratório foi explorar técnicas de <b>processamento de imagens</b> utilizando a biblioteca OpenCV. Foram abordados conceitos fundamentais, como a conversão de espaços de cor, aplicação de filtros para pré-processamento, detecção de bordas e manipulação de vídeos e imagens em tempo real. A prática foi dividida em etapas que permitiram a compreensão e implementação de diferentes funcionalidades do OpenCV, com ênfase em detecção e análise de objetos coloridos.
+				O objetivo deste laboratório foi................
 			</p>
 			
-			<p class="texto_padrao"><span class="bold-letter">
-			- Conversão de Espaço de Cor:
-			</span></p>
+			<h4 class="subtitulo_lab2"><span class="bold-letter">
+			- Cenário de Aplicação (CA):
+			</span></h4>
 			
 			<p class="texto_padrao">
-				A imagem capturada pela webcam foi convertida do espaço de cor RGB para HSV. O modelo HSV foi utilizado para facilitar a segmentação de cores específicas, permitindo a análise de objetos com base em suas tonalidades.
-			</p>
+				................
 			
-			<p class="texto_padrao"><span class="bold-letter">
-			- Aplicação do Filtro Canny:
-			</span></p>
-			
-			<p class="texto_padrao">
-				O detector de bordas Canny foi utilizado para identificar os contornos de objetos. Antes disso, aplicou-se um filtro gaussiano para reduzir o ruído presente nos frames capturados, garantindo uma detecção de bordas mais precisa.
-			</p>
-			
-			<p class="texto_padrao"><span class="bold-letter">
-			- Visualização em Tempo Real:
-			</span></p>
+			<h4 class="subtitulo_lab2"><span class="bold-letter">
+			- Fundamentação teórica:
+			</span></h4>
 			
 			<p class="texto_padrao">
-				Duas janelas foram criadas para exibição simultânea: uma para o vídeo original capturado pela webcam e outra para a saída processada pelo filtro Canny. Foi implementada uma barra deslizante para ajuste interativo dos limiares do filtro, permitindo a análise dinâmica dos resultados.
-			</p>
-			
-			<p class="texto_padrao"><span class="bold-letter">
-			- Salvamento de Frames:
-			</span></p>
-			
-			<p class="texto_padrao">
-				O programa permitiu salvar imagens dos frames capturados, tanto o original quanto o processado pelo filtro Canny. Os arquivos foram nomeados de forma única com base no timestamp, facilitando sua organização e identificação.
-			</p>
-			
-			<p class="texto_padrao"><span class="bold-letter">
-			- Gravação de Vídeos:
-			</span></p>
-			
-			<p class="texto_padrao">
-				A funcionalidade de gravação foi implementada para capturar vídeos do fluxo original e da saída processada pelo filtro Canny. Os vídeos foram salvos no formato AVI, utilizando uma taxa de 20 quadros por segundo, garantindo uma visualização clara do movimento dos objetos analisados.
+				..........
 			</p>
 
-			<h3 class="subtitulo_lab"> II. Fundamentos Básicos</h3>
-			
-				<p class="texto_padrao">A qualidade da captura de imagem e vídeo depende de diversos fatores, como a iluminação, resolução e configuração da câmera. A utilização de luz direta e difusa, juntamente com a correção de temperatura de cor, é crucial para obter resultados nítidos e bem iluminados. Durante o experimento, foram testadas diversas disposições de câmera e iluminação a fim de obtermos o melhor resultado. Além disso, a escolha da resolução afeta diretamente a clareza e o tamanho do arquivo final.</p>
-
+			<h3 class="subtitulo_lab"> II. Materiais e métodos</h3>
 		
-				<h4 class="subtitulo_lab2"> II. Objetivo </h4>
+				<h4 class="subtitulo_lab2"> - Modelagem Funcional do SPV (MF) </h4>
 		
-					<p class="texto_padrao">O laboratório tem como propósito proporcionar uma compreensão prática e teórica do processamento de imagens, com ênfase na segmentação por cores e detecção de bordas. Além disso, busca estimular a análise crítica dos resultados e a utilização de ferramentas avançadas para manipulação e extração de informações de imagens.</p>
+					<p class="texto_padrao">[INSERIR ORGANOGRAMA]</p>
 
 
-					<p class="texto_padrao"><span class="bold-letter"> - Entendimento de Espaços de Cor:</p>
+				<h4 class="subtitulo_lab2"><span class="bold-letter"> - Descrição da implementação do Sistema de Processamento da Visão (SPV)</h4>
 
+					<p class="texto_padrao">
+					xxxxxxxxxxxxxxx
+					</p>
 
-						<p class="texto_padrao">
-Compreender a conversão entre diferentes espaços de cor, como RGB, HSV, YCrCb e Bayer, além de suas aplicações práticas em detecção de objetos e segmentação de imagens.
-</p>
+				<h4 class="subtitulo_lab2"><span class="bold-letter">- Lista dos arquivos: dos código-fonte, imagens, vídeos, e arquivos auxiliares:</span></h4>
 
-<p class="texto_padrao"><span class="bold-letter">
-- Prática com Ferramentas de OpenCV:
-</span>
+					<p class="texto_padrao">
+					LISTA E LINKS
+					</p>
 
-<p class="texto_padrao">
-Estudar e implementar funções disponíveis no OpenCV para processamento de imagens, como cv2.inRange, conversão de espaços de cor, filtragem com filtros gaussianos e o detector de bordas Canny.
-</p>
+				<h4 class="subtitulo_lab2"><span class="bold-letter">- Análise técnica:</span></h4>
 
-<p class="texto_padrao"><span class="bold-letter">- Segmentação e Detecção de Objetos Coloridos: </span>
-
-	<p class="texto_padrao">
-Aprender a identificar e segmentar objetos coloridos em diferentes espaços de cor e determinar faixas adequadas para detecção no espaço HSV. </p>
-<p class="texto_padrao">
-Experimentar com valores de limiar (threshold) para realizar uma segmentação eficiente.
-</p>
-
-<p class="texto_padrao"><span class="bold-letter">
-- Efeitos de Filtragem e Detecção de Bordas:
-</span>
-
-<p class="texto_padrao">Analisar como a filtragem de imagens, como o filtro gaussiano, pode melhorar a detecção de bordas e objetos em imagens ruidosas.</p>
-<p class="texto_padrao">Aplicar o detector de bordas Canny para detectar contornos dos objetos previamente segmentados.</p>
-
-<p class="texto_padrao"><span class="bold-letter">- Gravação e Salvar Resultados:</span>
-
-	<p class="texto_padrao">Integrar funcionalidades para salvar imagens e vídeos que capturem o rastreamento de objetos coloridos em movimento, promovendo um registro claro do comportamento dos objetos detectados. </p>
-
-	<p class="texto_padrao"><span class="bold-letter">
-	- Extração Simultânea de Objetos Coloridos:
-	</span>
-
-	<p class="texto_padrao">
-		Desenvolver técnicas para encontrar e extrair múltiplos objetos coloridos na mesma imagem, destacando a aplicabilidade da segmentação por cores para cenários mais complexos.
-
-	</p>
-
+				<p class="texto_padrao">
+					Escrever uma análise técnica: sobre o grau de atendimento do sistema desenvolvido em relação ao contexto/cenário escolhido:
+					apresentar medidas ou métricas objetivas (numéricas) e/ou qualitativas,
+					resultantes do desempenho; 
+					análise e conclusões
     
 			<h3 class="subtitulo_lab"> III. Materiais e Métodos </h3>
 
