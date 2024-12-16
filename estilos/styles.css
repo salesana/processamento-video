@@ -189,9 +189,9 @@ background-color: white;
 
 .sobre {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
     text-align: center;
-    
+    padding-bottom: 5%;    
 }
 
 .subtitulo {
