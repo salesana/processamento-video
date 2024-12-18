@@ -29,7 +29,7 @@ $ ./recognize_face ./Classifiers/id-names.csv ./Classifiers/haarface.xml ./Class
 #include <sstream>
 
 //Carrega ID e nomes a partir do arquivo csv
-std::map<int, std::string> loadIdNames(con.st std::string& csvFilePath) {
+std::map<int, std::string> loadIdNames(const std::string& csvFilePath) {
     std::map<int, std::string> idNames;
     std::ifstream file(csvFilePath);
     if (!file.is_open()) {
@@ -151,4 +151,3 @@ int main(int argc, char* argv[]) {
 
     return 0;
 }
-
