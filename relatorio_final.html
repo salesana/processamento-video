@@ -72,9 +72,21 @@ O sistema, por ser projetado para operar em dispositivos de baixo custo computac
 
 				<h4 class="subtitulo_lab2"><span class="bold-letter"> - Descrição da implementação do Sistema de Processamento da Visão (SPV)</h4>
 
-					<p class="texto_padrao">
-					xxxxxxxxxxxxxxx
-					</p>
+					<p class="texto_padrao">A implementação do código de Reconhecimento Facial é realizada em algumas etapas: Coleta de Imagens, Treinamento e Reconhecimento Facial propriamente dito.</p>
+
+					<p class="texto_padrao"><span class="bold-letter">Coleta de Imagens:</span> Nesta etapa, é necessário inicialmente criar uma pasta onde ficarão armazenadas as imagens individuais de cada pessoa no sistema. O código analisa os frames da webcam utilizando o algoritmo Haar Cascade para identificar a região onde o rosto atual está localizado. 
+						É importante que a pessoa esteja devidamente posicionada para uma melhor captura das fotos. As imagens são salvas, indicando que aquele conjunto pertence à pessoa correspondente. O número de fotos pode variar conforme a escolha do operador, mas o recomendado é capturar entre 10 e 30 fotos para garantir uma boa precisão. 
+						Além disso, é importante manter a quantidade de fotos consistente entre todas as coletas para garantir a uniformidade do processo. </p>
+
+	    				
+	    					<p class="texto_padrao">Exemplos de Imagens salvas para analise do LBPH.</p>
+	    
+					<p class="texto_padrao"><span class="bold-letter">Treinamento:</span> Após a coleta de todas as fotos, o processo passa pela etapa de treinamento utilizando o método Local Binary Patterns Histogram (LBPH). 
+						Nessa etapa, o programa compila os padrões de reconhecimento e cria um arquivo de modelo contendo os nomes das pessoas e os histogramas correspondentes a cada uma delas.</p>
+
+					<p class="texto_padrao"><span class="bold-letter">Reconhecimento Facial:</span> Na etapa final, o programa identifica os rostos capturados pela webcam e os relaciona ao modelo previamente criado, atribuindo um nome ao indivíduo. O nome da pessoa aparece em verde acima do rosto, indicando que é uma pessoa cadastrada. 
+						Caso o modelo LBPH não consiga relacionar os valores capturados pela webcam, o programa exibirá "Unknown", informando que se trata de uma pessoa não cadastrada na biblioteca.</p>
+
 
 				<h4 class="subtitulo_lab2"><span class="bold-letter">- Lista dos arquivos: dos código-fonte, imagens, vídeos, e arquivos auxiliares:</span></h4>
 
