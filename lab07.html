@@ -25,7 +25,7 @@
 		
 				<h4 class="subtitulo_lab2"> II. a) Objetivo </h4>
 		
-					<p class="texto_padrao"></p>
+					<p class="texto_padrao">xxxxxx </p>
 
 
     
@@ -37,26 +37,19 @@
 					<li class="texto_padrao">Computador com sistema operacional UBUNTU 22.04.05 LTS - 64 Bits</li>
 
 				<h4 class="subtitulo_lab2"> III. b) Procedimento Experimental </h4>
-					<p class="texto_padrao"> Utilizando o  <a href=https://github.com/salesana/processamento-video/blob/main/lab7/item1/facedetect.cpp">codigo</a> fornecidos via Moodle, 
-						foram criados diversos programas de visualização, captura e escrita de imagens e vídeos. O processo de criação de um programa iniciava com a criação de um arquivo
-						de texto "CMakeLists.txt" e um arquivo de programação em linguagem C++ 	responsável pelos passos executados pelo programa. CMake é um sistema utilizado para automatizar 
-						e criar programas em linguagem C++. Após a criação destes arquivos, num terminal, eram executados os comados "cmake ." e, em sequência,
-						"make". Tais comandos realizavam a criação do programa, em formato de arquivo executável. </p>
+					<p class="texto_padrao"> Utilizando o  <a href=https://github.com/salesana/processamento-video/blob/main/lab7/item1/facedetect.cpp">codigo</a> Foi possivel analisar as imagens em PNG dos integrantes do grupo usando dois algoritomos de Haarcascade: 
+						frontalface_alt, e eye_tree_eyeglasses que respectivamente buscam semelhancas na imagens com o rosto da pessoa de frente olhando para a camera e os olhos das pessoas </p>
 
 
 					<h4 class="subtitulo_lab4">- Preparação da Imagem: </h4>
 					<p class="texto_padrao">						
 						Carregamos uma imagem de entrada (foto_grupo_1.png) utilizando a biblioteca OpenCV, que foi usada como base para a aplicação dos filtros de suavização. </p>
          
-					<p class="texto_padrao">O procedimento experimental foi realizado em etapas, aplicando diferentes filtros de suavização em uma imagem base com o uso da biblioteca OpenCV. O objetivo era comparar os efeitos de cada filtro e observar como a variação do tamanho do kernel impacta a qualidade da imagem em termos de suavização e preservação de detalhes.
+					<p class="texto_padrao">O procedimento experimental consistiu na aplicação dos algoritmos Haarcascade e na definição da área identificada, destacada por um círculo rosa para o rosto e dois círculos azuis para os olhos.
 					</p>
-
-					<h4 class="subtitulo_lab4">- Aplicação dos Filtros de Suavização: </h4>
-					<p class="texto_padrao"><span class="bold-letter">a) Homogeneous Blur (Média): </span>Este filtro calcula a média dos pixels vizinhos para suavizar a imagem. Foi implementado utilizando o método blur() da OpenCV.</p>
-			
 		
 			<h3 class="subtitulo_lab"> IV. Resultados e Análises </h3>
-			<p class="texto_padrao"> Item 1 .</p>
+			<p class="texto_padrao"> Apos carregar as imagens de cada integrante do grupo o programa detectou quase todos os rostos e olhos corretamente, podendo variar de acordo com iluminação e ângulo da câmera .</p>
 
 	    			<div class="image-container">
 							<img src="./lab7/item1/ana_oracle.png" alt="Foto Original " width="600px" height="500px">
@@ -72,7 +65,7 @@
 							<img src="./lab7/item1/edson.png" alt="Imagem Equalizada" width="600px" height="500px">
 							<p class="caption">Edson Reconhecimento </p>
 						</div>
-			<p class="texto_padrao"> Item 2 <a href=https://github.com/salesana/processamento-video/blob/main/lab7/item2/item2.cpp">codigo</a> .</p>
+			<p class="texto_padrao"> A seguir foi utilizado o  <a href=https://github.com/salesana/processamento-video/blob/main/lab7/item2/item2.cpp">codigo</a>, aplicando o mesmo modelo Haarcascade na face e nos olhos na webcam, obtivemos os seguintes resultados. .</p>
 						
 						<div class="image-container">
 							<img src="./lab7/item2/todos.png" alt="Imagem Equalizada" width="600px" height="500px">
@@ -90,17 +83,7 @@
 				</p>
 	    			<p class="texto_padrao"> <a href="https://stackoverflow.com/questions/30103077/what-is-the-codec-for-mp4-videos-in-python-opencv">what is the codec for mp4 videos in python OpenCV</a>
 				</p>
-
-				<p class="texto_padrao"> <a href="https://docs.opencv.org/4.x/d1/dc5/tutorial_background_subtraction.html">
-					How to Use Background Subtraction Methods
-				</p>
-
-				
-				<p class="texto_padrao"> <a href="https://github.com/opencv/opencv/blob/4.x/samples/cpp/tutorial_code/video/bg_sub.cpp">
-					Background subtraction tutorial sample code				</p>
-
-					<p class="texto_padrao"> <a href="https://github.com/opencv/opencv/blob/4.x/samples/data/vtest.avi">
-						Test Video AVI Format			</p>
+				<p class="texto_padrao"> <a href="https://github.com/opencv/opencv/blob/4.x/samples/data/vtest.avi">Test Video AVI Format</p>
 
 
 </body>
