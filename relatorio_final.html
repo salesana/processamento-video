@@ -56,7 +56,7 @@ O sistema, por ser projetado para operar em dispositivos de baixo custo computac
 
 			<p class="texto_padrao"> O Haar Cascade, ou Haar-like Features Cascade Classifier, é um algoritmo amplamente utilizado para detecção de objetos, especialmente para identificar rostos em imagens e vídeos. Baseado no trabalho de Paul Viola e Michael Jones (2001), o Haar Cascade utiliza características simples, conhecidas como Haar-like features, que avaliam a diferença de intensidade entre áreas claras e escuras de uma imagem, como o contraste entre os olhos e as bochechas. O modelo é treinado com imagens positivas (contendo o objeto de interesse) e negativas (sem o objeto), organizando os classificadores em uma estrutura em cascata, que descarta rapidamente regiões irrelevantes, otimizando o desempenho.
 </p>	
-		<p class="texto_padrao">		No projeto, o Haar Cascade é utilizado para localizar rostos nos frames capturados pela câmera. Com a função `detectMultiScale` do OpenCV, o algoritmo identifica múltiplas faces em diferentes escalas dentro de uma imagem. Essa detecção inicial é essencial para isolar as regiões de interesse que serão reconhecidas posteriormente pelo LBPH. A eficiência e simplicidade do Haar Cascade o tornam ideal para aplicações em tempo real, como este sistema de reconhecimento facial, que combina precisão e rapidez em dispositivos de recursos limitados.</p>
+		<p class="texto_padrao"> No projeto, o Haar Cascade é utilizado para localizar rostos nos frames capturados pela câmera. Com a função `detectMultiScale` do OpenCV, o algoritmo identifica múltiplas faces em diferentes escalas dentro de uma imagem. Essa detecção inicial é essencial para isolar as regiões de interesse que serão reconhecidas posteriormente pelo LBPH. A eficiência e simplicidade do Haar Cascade o tornam ideal para aplicações em tempo real, como este sistema de reconhecimento facial, que combina precisão e rapidez em dispositivos de recursos limitados.</p>
 
 
 		<p class = "texto_padrao">O LBPH (Local Binary Patterns Histogram) é um algoritmo amplamente utilizado para reconhecimento facial devido à sua simplicidade e robustez. Ele funciona extraindo padrões locais das imagens, convertendo cada pixel em um valor binário com base na comparação com os pixels vizinhos. O resultado é um histograma que representa as texturas da imagem de forma compacta e eficaz. Por ser menos sensível a variações de iluminação e expressões faciais, o LBPH é uma escolha comum para sistemas de reconhecimento em ambientes variados.
@@ -78,12 +78,18 @@ O sistema, por ser projetado para operar em dispositivos de baixo custo computac
 						É importante que a pessoa esteja devidamente posicionada para uma melhor captura das fotos. As imagens são salvas, indicando que aquele conjunto pertence à pessoa correspondente. O número de fotos pode variar conforme a escolha do operador, mas o recomendado é capturar entre 10 e 30 fotos para garantir uma boa precisão. 
 						Além disso, é importante manter a quantidade de fotos consistente entre todas as coletas para garantir a uniformidade do processo. </p>
 
-	    				
+	    					<div class="image-container">
+							<img src="./imagens%20relatorio%20final/Rosto%20de%20exemplo%20Edson.png" width="600px" height="500px">
+							<p class="caption">Vermelho HSV </p>
+						</div>
 	    					<p class="texto_padrao">Exemplos de Imagens salvas para analise do LBPH.</p>
 	    
 					<p class="texto_padrao"><span class="bold-letter">Treinamento:</span> Após a coleta de todas as fotos, o processo passa pela etapa de treinamento utilizando o método Local Binary Patterns Histogram (LBPH). 
 						Nessa etapa, o programa compila os padrões de reconhecimento e cria um arquivo de modelo contendo os nomes das pessoas e os histogramas correspondentes a cada uma delas.</p>
-
+						<div class="image-container">
+							<img src="./imagens%20relatorio%20final/Imagem%20do%20codigo%20reconhecendo%20o%20gabriel.png" width="600px" height="500px">
+							<p class="caption">Vermelho HSV </p>
+						</div>
 					<p class="texto_padrao"><span class="bold-letter">Reconhecimento Facial:</span> Na etapa final, o programa identifica os rostos capturados pela webcam e os relaciona ao modelo previamente criado, atribuindo um nome ao indivíduo. O nome da pessoa aparece em verde acima do rosto, indicando que é uma pessoa cadastrada. 
 						Caso o modelo LBPH não consiga relacionar os valores capturados pela webcam, o programa exibirá "Unknown", informando que se trata de uma pessoa não cadastrada na biblioteca.</p>
 
