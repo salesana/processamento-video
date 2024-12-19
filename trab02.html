@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trabalho - Parte II </title>
+    <link rel="icon" type="image/png" href="images/ufpng.png">
+    <link rel="stylesheet" href="estilos/LAB.css">
+    <link rel="stylesheet" href="estilos/reset.css">
+      <a href="relatorios.html" class="home-button">Retornar à aba Relatórios</a>
+        <img id="id__logo" class="logo" src="assets/ufabc.png" alt="Logo UFABC"></img>
+</head>
+
+<body>
+    <section class="lab">
+        <h2 class="titulo_lab">Trabalho - Parte II - Modelagem Funcional do Sistema de Processamento Visual (MF)</h2>
+		
+	
+<p class="texto_padrao">O sistema de processamento visual utiliza técnicas avançadas de visão computacional para realizar a detecção e o reconhecimento facial. Ele é baseado em um fluxo modular que combina o algoritmo Haar Cascade para detecção de faces e o Local Binary Patterns Histogram (LBPH) para reconhecimento facial. Esses métodos foram escolhidos devido à sua eficiência e capacidade de operar em tempo real, mesmo em ambientes com restrições de recursos computacionais. As principais funcionalidades detalhadas do sistema são:</p>
+
+<p class="texto_padrao"><span class="bold-letter">Captura de Imagens:</span> Utilizamos o módulo implementado em <i>takephotos.cpp</i> para capturar imagens faciais de indivíduos através de uma câmera conectada ao dispositivo. As imagens são processadas e associadas a identificadores únicos armazenados no arquivo <i>id-names.csv</i>. As imagens capturadas são salvas no diretório <i>faces</i>, organizadas por identificadores.</p>
+
+<p class="texto_padrao"><span class="bold-letter">Treinamento de Modelos:</span> O sistema utiliza o diretório <i>faces</i> como fonte de dados para o treinamento do classificador LBPH. Durante esse processo, as imagens são convertidas para escala de cinza, e os histogramas de padrões binários locais são calculados para cada região da face. Esses histogramas são armazenados no diretório <i>Classifiers</i> como modelos treinados, que serão utilizados no reconhecimento facial.</p>
+
+<p class="texto_padrao"><span class="bold-letter">Detecção Facial com Haar Cascade:</span> Para identificar a localização de faces em imagens ou fluxos de vídeo, o sistema utiliza o classificador Haar Cascade. Esse método é baseado na aplicação de filtros Haar para detectar características faciais, como olhos, nariz e boca, dentro de janelas de diferentes tamanhos. Sua estrutura de cascata permite que a detecção seja rápida e eficaz, descartando rapidamente regiões que não contêm faces.</p>
+
+<p class="texto_padrao"><span class="bold-letter">Reconhecimento Facial com LBPH:</span> O reconhecimento facial é realizado utilizando o LBPH. Após a detecção da face, o sistema compara o histograma da face capturada com os histogramas armazenados nos modelos treinados. Essa abordagem é robusta a variações de iluminação e expressões faciais, garantindo alta precisão no reconhecimento.</p>
+
+<p class="texto_padrao"><span class="bold-letter">Estrutura Modular:</span> A arquitetura do sistema é projetada de forma modular para facilitar a manutenção e futuras expansões. Cada bloco funcional (captura, detecção, treinamento e reconhecimento) é independente, permitindo atualizações ou substituições sem afetar os outros componentes.</p>
+
+<p class="texto_padrao"><span class="bold-letter">Fluxograma:</span> O fluxo do sistema pode ser descrito da seguinte forma:</p>
+
+<ul class="texto_padrao">
+    <li>01. Captura de imagens faciais e associação com identificadores únicos.</li>
+    <li>02. Processamento das imagens capturadas para treinamento do modelo LBPH.</li>
+    <li>03. Detecção facial em tempo real utilizando Haar Cascade.</li>
+    <li>04. Reconhecimento facial comparando o histograma capturado com os modelos LBPH treinados.</li>
+    <li>05. Exibição do identificador correspondente ou mensagem de "não encontrado".</li>
+</ul>
+
+<p class="texto_padrao"><span class="bold-letter">Cenário de Implementação:</span> O sistema é ideal para aplicações que requerem reconhecimento facial em tempo real, como controle de acesso, autenticação e vigilância. Ele é capaz de lidar com grandes volumes de dados, mantendo um desempenho eficiente. Alterações futuras podem incluir a integração com redes neurais profundas para aumentar a precisão do reconhecimento.</p>
+
+			
+				
+         
+
+
+
+	</body>
+</html>
