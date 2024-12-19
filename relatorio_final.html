@@ -17,28 +17,53 @@
 
 			<h3 class="intro">I. Introdução</h3>
 			<p class="texto_padrao">
-				O objetivo deste projeto foi criar um sistema de reconhecimento facial em C++ utilizando o classificador Haar Cascade da biblioteca OpenCV. 
-				O sistema realizou a detecção e identificação de faces em imagens e vídeos, comparando as características faciais com um banco de dados existente. 
-				A solução foi desenvolvida para ser rápida, eficiente e aplicável em cenários de controle de acesso e segurança.
+				O reconhecimento facial é uma das tecnologias mais relevantes da atualidade, amplamente utilizada em áreas como segurança, autenticação de identidade, monitoramento e controle de acesso. Sua popularidade deve-se à combinação de precisão, rapidez e conveniência, eliminando a necessidade de métodos tradicionais, como senhas ou cartões físicos. Essa tecnologia tem transformado diversos setores, trazendo maior eficiência e confiabilidade para processos que exigem identificação precisa.
+</p>	
+
+<p class="texto_padrao">
+Diante da crescente demanda por soluções acessíveis e eficazes, este trabalho foi dedicado ao desenvolvimento de um sistema de reconhecimento facial projetado para ser executado em dispositivos com recursos computacionais limitados. O objetivo foi criar uma aplicação prática e de fácil implementação, adequada para diferentes cenários, especialmente em ambientes educacionais e de pesquisa.
+
+Para alcançar esse propósito, foi utilizada a linguagem de programação C++ em conjunto com bibliotecas da OpenCV, reconhecidas por suas capacidades robustas de processamento de imagens e visão computacional. O sistema implementa a detecção facial por meio do classificador Haar Cascade (HaarCode), que permite localizar rostos em imagens com rapidez e eficiência. Para o reconhecimento facial, foi utilizado o algoritmo Local Binary Patterns Histogram (LBPH), que é conhecido por sua robustez a variações de iluminação e sua eficiência em sistemas de baixo custo computacional. Essa combinação garantiu um sistema que realiza a captura, o treinamento e o reconhecimento de rostos em tempo real, oferecendo um equilíbrio entre precisão e simplicidade na execução.
 			</p>
 			
+		
 			<h4 class="subtitulo_lab2"><span class="bold-letter">
 			- Cenário de Aplicação (CA):
 			</span></h4>
 			
 			<p class="texto_padrao">
-				A necessidade de identificar e autenticar indivíduos de forma eficiente e automatizada, garantindo precisão e rapidez em aplicações como controle de acesso
-				e segurança.
-			
+				O cenário de aplicação para o sistema de reconhecimento facial desenvolvido é voltado para o controle de acesso em diversos ambientes, como instituições educacionais, empresas, e espaços restritos em geral. No contexto da UFABC, o sistema tem como objetivo substituir métodos tradicionais de autenticação, como cartões de identificação e senhas, por uma solução mais moderna, segura e prática.
+
+A utilização do reconhecimento facial para controle de acesso apresenta inúmeras vantagens. Por ser baseado em características biométricas únicas, o sistema oferece maior segurança ao evitar fraudes, como empréstimo ou perda de crachás. Além disso, a automação do processo elimina filas e reduz o tempo de espera para entrada em locais restritos, proporcionando maior conveniência para os usuários.
+
+</p>
+<p class = "texto_padrao">
+Na UFABC, por exemplo, o sistema poderia ser utilizado em laboratórios, salas de aula, bibliotecas e outros ambientes que exigem restrição de acesso. Com uma câmera instalada na entrada do local, o sistema identifica o rosto dos usuários e, em tempo real, libera ou nega o acesso com base no banco de dados previamente configurado. Essa abordagem não só aumenta a segurança, mas também otimiza os recursos, permitindo que o controle de entrada seja realizado de forma autônoma, reduzindo a necessidade de supervisão humana constante.
+</p>
+<p class = "texto_padrao">
+O sistema, por ser projetado para operar em dispositivos de baixo custo computacional, é ideal para instituições que desejam implementar soluções tecnológicas avançadas sem a necessidade de grandes investimentos em infraestrutura.
+			</p>	
+
 			<h4 class="subtitulo_lab2"><span class="bold-letter">
 			- Fundamentação teórica:
 			</span></h4>
 			
+			<p class="texto_padrao">Este projeto foi desenvolvido com base nos conhecimentos adquiridos ao longo do quadrimestre cursando a disciplina de Processamento de Vídeo. Durante a matéria, foram explorados conceitos fundamentais sobre manipulação de vídeos e frames, bem como a aplicação prática desses conhecimentos em projetos utilizando C++. Além disso, aprendemos a configurar e integrar ferramentas como CMake e Make para a construção de projetos, o que foi essencial para estruturar e executar o sistema de reconhecimento facial. O aprendizado teórico e prático ao longo da disciplina possibilitou o desenvolvimento de um sistema funcional e eficiente, que combina a captura, processamento e reconhecimento facial em tempo real, alinhando conceitos acadêmicos à aplicação prática. </p>
 			<p class="texto_padrao">
-				..........
+				O processamento de vídeo é uma base essencial para sistemas de reconhecimento facial, permitindo a captura, análise e interpretação de quadros em tempo real. Em sistemas como o desenvolvido, técnicas como a detecção facial com Haar Cascade e o reconhecimento com LBPH são aplicadas a cada quadro capturado pela câmera, garantindo identificação precisa e rápida. Esses algoritmos lidam com desafios como variações de iluminação e movimento, enquanto otimizam o desempenho para operar em dispositivos com recursos limitados. A integração dessas técnicas permite que o sistema detecte, rastreie e reconheça rostos em fluxos contínuos de vídeo, proporcionando uma solução eficiente para aplicações práticas, como controle de acesso em ambientes educacionais e corporativos.
 			</p>
 
-			<h3 class="subtitulo_lab"> II. Materiais e métodos</h3>
+
+			<p class="texto_padrao"> O Haar Cascade, ou Haar-like Features Cascade Classifier, é um algoritmo amplamente utilizado para detecção de objetos, especialmente para identificar rostos em imagens e vídeos. Baseado no trabalho de Paul Viola e Michael Jones (2001), o Haar Cascade utiliza características simples, conhecidas como Haar-like features, que avaliam a diferença de intensidade entre áreas claras e escuras de uma imagem, como o contraste entre os olhos e as bochechas. O modelo é treinado com imagens positivas (contendo o objeto de interesse) e negativas (sem o objeto), organizando os classificadores em uma estrutura em cascata, que descarta rapidamente regiões irrelevantes, otimizando o desempenho.
+</p>	
+		<p class="texto_padrao">		No projeto, o Haar Cascade é utilizado para localizar rostos nos frames capturados pela câmera. Com a função `detectMultiScale` do OpenCV, o algoritmo identifica múltiplas faces em diferentes escalas dentro de uma imagem. Essa detecção inicial é essencial para isolar as regiões de interesse que serão reconhecidas posteriormente pelo LBPH. A eficiência e simplicidade do Haar Cascade o tornam ideal para aplicações em tempo real, como este sistema de reconhecimento facial, que combina precisão e rapidez em dispositivos de recursos limitados.</p>
+
+
+		<p class = "texto_padrao">O LBPH (Local Binary Patterns Histogram) é um algoritmo amplamente utilizado para reconhecimento facial devido à sua simplicidade e robustez. Ele funciona extraindo padrões locais das imagens, convertendo cada pixel em um valor binário com base na comparação com os pixels vizinhos. O resultado é um histograma que representa as texturas da imagem de forma compacta e eficaz. Por ser menos sensível a variações de iluminação e expressões faciais, o LBPH é uma escolha comum para sistemas de reconhecimento em ambientes variados.
+</p>
+	<p class="texto_padrao">No projeto, o LBPH é responsável por reconhecer os rostos detectados pelo Haar Cascade. O algoritmo compara os histogramas das imagens capturadas com os histogramas armazenados durante o treinamento, determinando a identidade do rosto com base em uma métrica de similaridade. Sua robustez e eficiência tornam o LBPH ideal para sistemas como este, que precisam operar em tempo real e em dispositivos de recursos computacionais limitados, garantindo precisão e confiabilidade no reconhecimento facial. </p>
+			
+	<h3 class="subtitulo_lab"> II. Materiais e métodos</h3>
 		
 				<h4 class="subtitulo_lab2"> - Modelagem Funcional do SPV (MF) </h4>
 		
@@ -67,20 +92,47 @@
 				</p>
     
 			<h3 class="subtitulo_lab"> III. Laboratório Experimental </h3>
-
-				<h4 class="subtitulo_lab2">- Roteiro do Laboratório Experimental (LEx)</h4>
-	    
-	    			<p class="texto_padrao">
-					É possível visualizar ou baixar o Roteiro do Laboratório Experimental abaixo:
-				</p>
-	    			<iframe
-						src="./Laboratório Experimental do SPV (Lex) - Grupo INFOMinds.pdf"
-						width="25%"
-						height="50%"
-						style="border:none"
-						title="Laboratório Experimental do SPV (Lex) - Grupo INFOMinds"
+			<h4 class="subtitulo_lab2">- Roteiro do Laboratório Experimental (LEx)</h4>
+			<p class="texto_padrao">
+				É possível visualizar ou baixar o Roteiro do Laboratório Experimental abaixo:
+			</p>
+			
+			<h4 class="subtitulo_lab2">- Roteiro do Laboratório Experimental (LEx)</h4>
+			<p class="texto_padrao">
+				É possível visualizar ou baixar o Roteiro do Laboratório Experimental abaixo:
+			</p>
+			
+			<div class="pdf-container">
+				<iframe
+					src="./Laboratório Experimental do SPV (Lex) - Grupo INFOMinds.pdf"
+					class="pdf-frame"
+					title="Laboratório Experimental do SPV (Lex) - Grupo INFOMinds"
 				></iframe>
-
+			</div>
+			
+			<style>
+				.pdf-container {
+					width: 60%; /* Quadro maior inicialmente */
+					height: 70vh; /* Altura proporcional ao viewport */
+					overflow: hidden;
+					transition: all 0.3s ease;
+					margin: auto; /* Centraliza o quadro */
+					border: 1px solid #ccc;
+					box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destaque */
+				}
+			
+				.pdf-frame {
+					width: 100%;
+					height: 100%;
+					border: none;
+				}
+			
+				.pdf-container:hover {
+					width: 90%; /* Expande o quadro no hover */
+					height: 90vh; /* Altura proporcional maior no hover */
+				}
+			</style>
+			
 
 				<h4 class="subtitulo_lab2">- Análise dos Resultados do Teste de Campo (TC):</h4>
 	    
@@ -95,14 +147,24 @@
 					imagens coletadas. No entanto, se a pessoa está no mesmo ângulo de coleta das imagens, o falso positivo foi corrigido.
 				</p>
 		
-			<h3 class="subtitulo_lab"> IV. Conclusões </h3>
-					
-					<p class="texto_padrao">
-						Nesta seção a equipe deverá comentar se os objetivos propostos na
-						introdução e a modelagem do trabalho foram atingidos ou não, baseados nos
-						exemplos apresentados. Deverá ainda comentar sobre os pontos positivos e
-						negativos e da implementação.
-					</p>
+				<h3 class="subtitulo_lab">IV. Conclusões</h3>
+
+				<p class="texto_padrao">
+					Os objetivos propostos na introdução e na modelagem foram atingidos com sucesso. Conseguimos desenvolver uma ferramenta simples, mas que apresenta um bom nível de assertividade no reconhecimento facial, cumprindo os requisitos estabelecidos para o projeto.
+				</p>		
+				
+				<p class="texto_padrao">
+					Dentre os pontos positivos do trabalho, destaca-se o uso da linguagem C++, que, além de ser rápida, possibilitou a criação de uma solução eficiente sem demandar grandes recursos computacionais. Essa característica tornou o sistema leve e adequado para dispositivos com recursos limitados, atendendo à proposta inicial de acessibilidade e simplicidade.
+				</p>
+				
+				<p class="texto_padrao">
+					Por outro lado, alguns desafios foram enfrentados durante o desenvolvimento. Apesar de ser uma linguagem que nos trouxe bons resultados, a implementação em C++ exigiu um esforço adicional devido à complexidade da linguagem e à necessidade de integração com bibliotecas como o OpenCV. Além disso, o pré-requisito de execução no sistema operacional Ubuntu dificultou os testes em outros ambientes fora da UFABC, limitando a portabilidade do sistema.
+				</p>
+							
+				<p class="texto_padrao">
+					Outro ponto a ser mencionado é a qualidade da webcam utilizada, que impactou na coleta de imagens e, consequentemente, na precisão do sistema em algumas situações. Apesar das dificuldades, o trabalho foi concluído com êxito, alcançando os resultados esperados e destacando a viabilidade do sistema em atender às necessidades propostas, com potencial para melhorias e adaptações futuras.
+				</p>
+				
 				
 			<h3 class="subtitulo_lab">V. Referências Bibliográficas</h3>
 				<p class="texto_padrao">
